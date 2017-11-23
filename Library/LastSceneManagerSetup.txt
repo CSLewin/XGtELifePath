@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/CharGen.unity
+- path: Assets/_Scenes/CharGen.unity
   isLoaded: 1
   isActive: 1
