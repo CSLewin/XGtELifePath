@@ -17,6 +17,10 @@ public class CharGen : MonoBehaviour {
 	public string playerBackground = "testbackground";
 	public string playerBackgroundSpecial = null;
 
+	public string classQuirk1; 
+	public string classQuirk2; 
+	public string classQuirk3;
+
 	public string playerParentPresence;
 	public bool parentsKnown;
 	public string mixedAncestry = null;
@@ -119,7 +123,7 @@ public class CharGen : MonoBehaviour {
 
 			displayText.text += "You were a(n) " + playerBackground + " because " + playerBackgroundPersonalDecision + "\n\n";
 
-			displayText.text += "You took up the life of a(n) " + playerClass + " because " + playerClassPersonalDecision + "\n\n";
+			displayText.text += "You took up the life of a(n) " + playerClass + " because " + playerClassPersonalDecision + " " + RollClassQuirks() + "\n\n";
 
 			displayText.text += PrintLifeEvents() + "\n";
 				
@@ -491,9 +495,361 @@ public class CharGen : MonoBehaviour {
 			if (subclass == 8) {playerSubclass = " (School of Transmutation)";}
 			if (subclass == 9) {playerSubclass = " (War Magic)";}
 		}
-
 		return playerClass;
+	}
 
+	string RollClassQuirks ()
+	{
+		if (playerClass == "Barbarian") {
+			int classQuirk1Result = roll (1, 6);
+			classQuirk1 = "You carry a personal totem--";
+			if (classQuirk1Result == 1) {classQuirk1 += "a tuft of fur from a solitary wolf that you befriended during a hunt.";}
+			if (classQuirk1Result == 2) {classQuirk1 += "three eagle feathers given to you by a wise shaman, who told you they would play a role in determining your fate.";}
+			if (classQuirk1Result == 3) {classQuirk1 += "a necklace made from the claws of a young cave bear that you slew singlehandedly as a child.";}
+			if (classQuirk1Result == 4) {classQuirk1 += "a small leather pouch holding three stones that represent your ancestors.";}
+			if (classQuirk1Result == 5) {classQuirk1 += "a few small bones from the first beast you killed, tied together with colored wool.";}
+			if (classQuirk1Result == 6) {classQuirk1 += "an egg-sized stone in the shape of your spirit animal that appeared one day in your belt pouch.";}
+
+			int classQuirk2Result = roll (1, 6);
+			classQuirk2 = "You wear a notable tattoo--";
+			if (classQuirk2Result == 1) {classQuirk2 += "the wings of an eagle are spread wide across your upper back.";}
+			if (classQuirk2Result == 2) {classQuirk2 += "etched on the backs of your hands are the paws of a cave bear.";}
+			if (classQuirk2Result == 3) {classQuirk2 += "the symbols of your clan are displayed in viny patterns along your arms.";}
+			if (classQuirk2Result == 4) {classQuirk2 += "the antlers of an elk are inked across your back.";}
+			if (classQuirk2Result == 5) {classQuirk2 += "images of your spirit animal are tattooed along your weapon arm and hand.";}
+			if (classQuirk2Result == 6) {classQuirk2 += "the eyes of a wolf are marked on your back to help you see and ward off evil spirits.";}
+
+			int classQuirk3Result = roll (1, 6);
+			classQuirk3 = "You hold to a superstition--";
+			if (classQuirk3Result == 1) {classQuirk3 += "if you disturb the bones of the dead, you inherit all the troubles that plagued them in life.";}
+			if (classQuirk3Result == 2) {classQuirk3 += "never trust a wizard. They’re all devils in disguise, especially the friendly ones.";}
+			if (classQuirk3Result == 3) {classQuirk3 += "dwarves have lost their spirits, and are almost like the undead. That’s why they live underground.";}
+			if (classQuirk3Result == 4) {classQuirk3 += "magical things bring trouble. Never sleep with a magic object within ten feet of you.";}
+			if (classQuirk3Result == 5) {classQuirk3 += "when you walk through a graveyard, be sure to wear silver, or a ghost might jump into your body.";}
+			if (classQuirk3Result == 6) {classQuirk3 += "if an elf looks you in the eyes, she’s trying to read your thoughts.";}
+		}
+
+		if (playerClass == "Bard") {
+			int classQuirk1Result = roll (1, 6);
+			classQuirk1 = "Your most defining work is ";
+			if (classQuirk1Result == 1) {classQuirk1 += "'The Three Flambinis,' a ribald song concerning mistaken identities and unfettered desire.";}
+			if (classQuirk1Result == 2) {classQuirk1 += "'Waltz of the Myconids,' an upbeat tune that children in particular enjoy.";}
+			if (classQuirk1Result == 3) {classQuirk1 += "'Asmodeus’s Golden Arse,' a dramatic poem you claim was inspired by your personal visit to Avernus.";}
+			if (classQuirk1Result == 4) {classQuirk1 += "'The Pirates of Luskan,' your firsthand account of being kidnapped by sea reavers as a child.";}
+			if (classQuirk1Result == 5) {classQuirk1 += "'A Hoop, Two Pigeons, and a Hell Hound,' a subtle parody of an incompetent noble.";}
+			if (classQuirk1Result == 6) {classQuirk1 += "'A Fool in the Abyss,' a comedic poem about a jester’s travels among demons.";}
+
+			int classQuirk2Result = roll (1, 6);
+			classQuirk2 = "You carry a notable intstrument--";
+			if (classQuirk2Result == 1) {classQuirk2 += "a masterfully crafted halfling fiddle.";}
+			if (classQuirk2Result == 2) {classQuirk2 += "a mithral horn made by elves.";}
+			if (classQuirk2Result == 3) {classQuirk2 += "a zither made with drow spider silk.";}
+			if (classQuirk2Result == 4) {classQuirk2 += "an orcish drum.";}
+			if (classQuirk2Result == 5) {classQuirk2 += "a wooden bullywug croak box.";}
+			if (classQuirk2Result == 6) {classQuirk2 += "a tinker’s harp of gnomish design.";}
+
+			int classQuirk3Result = roll (1, 6);
+			classQuirk3 = "Like most Bards, you've suffered at least one bad experience--such as ";
+			if (classQuirk3Result == 1) {classQuirk3 += "the time when your comedic song, “Big Tom’s Hijinks” — which, by the way, you thought was brilliant — did not go over well with Big Tom.";}
+			if (classQuirk3Result == 2) {classQuirk3 += "the matinee performance when a circus’s owlbear got loose and terrorized the crowd.";}
+			if (classQuirk3Result == 3) {classQuirk3 += "when your opening song was your enthusiastic but universally hated rendition of “Song of the Froghemoth”.";}
+			if (classQuirk3Result == 4) {classQuirk3 += "the first and last public performance of “Mirt, Man about Town”.";}
+			if (classQuirk3Result == 5) {classQuirk3 += "the time on stage when your wig caught fire and you threw it down — which set fire to the stage.";}
+			if (classQuirk3Result == 6) {classQuirk3 += "when you sat on your lute by mistake during the final stanza of “Starlight Serenade”.";}
+		}
+
+		if (playerClass == "Cleric") {
+			int classQuirk1Result = roll (1, 6);
+			classQuirk1 = "You won't soon forget the temple in which you studied--";
+			if (classQuirk1Result == 1) {classQuirk1 += "your temple is said to be the oldest surviving structure built to honor your god.";}
+			if (classQuirk1Result == 2) {classQuirk1 += "acolytes of several like-minded deities all received instruction together in your temple.";}
+			if (classQuirk1Result == 3) {classQuirk1 += "you come from a temple famed for the brewery it operates. Some say you smell like one of its ales.";}
+			if (classQuirk1Result == 4) {classQuirk1 += "your temple is a fortress and a proving ground that trains warrior-priests.";}
+			if (classQuirk1Result == 5) {classQuirk1 += "your temple is a peaceful, humble place, filled with vegetable gardens and simple priests.";}
+			if (classQuirk1Result == 6) {classQuirk1 += "you served in a temple in the Outer Planes.";}
+
+			int classQuirk2Result = roll (1, 6);
+			classQuirk2 = "You retain a keepsake that reminds you of your vows--";
+			if (classQuirk2Result == 1) {classQuirk2 += "the finger bone of a saint.";}
+			if (classQuirk2Result == 2) {classQuirk2 += "a metal-bound book that tells how to hunt and destroy infernal creatures.";}
+			if (classQuirk2Result == 3) {classQuirk2 += "a pig’s whistle that reminds you of your humble and beloved mentor.";}
+			if (classQuirk2Result == 4) {classQuirk2 += "a braid of hair woven from the tail of a unicorn.";}
+			if (classQuirk2Result == 5) {classQuirk2 += "a scroll that describes how best to rid the world of necromancers.";}
+			if (classQuirk2Result == 6) {classQuirk2 += "a runestone said to be blessed by your god.";}
+
+			int classQuirk3Result = roll (1, 6);
+			classQuirk3 = "Like all mortals, you struggle with dark desires and forbidden attractions--";
+			if (classQuirk3Result == 1) {classQuirk3 += "an imp offers you counsel. You try to ignore the creature, but sometimes its advice is helpful.";}
+			if (classQuirk3Result == 2) {classQuirk3 += "you believe that, in the final analysis, the gods are nothing more than ultrapowerful mortal creatures.";}
+			if (classQuirk3Result == 3) {classQuirk3 += "you acknowledge the power of the gods, but you think that most events are dictated by pure chance.";}
+			if (classQuirk3Result == 4) {classQuirk3 += "even though you can work divine magic, you have never truly felt the presence of a divine essence within yourself.";}
+			if (classQuirk3Result == 5) {classQuirk3 += "you are plagued by nightmares that you believe are sent by your god as punishment for some unknown transgression.";}
+			if (classQuirk3Result == 6) {classQuirk3 += "in times of despair, you feel that you are but a plaything of the gods, and you resent their remoteness.";}
+		}
+
+		if (playerClass == "Druid") {
+			int classQuirk1Result = roll (1, 6);
+			classQuirk1 = "You always carry a treasured item on your person--";
+			if (classQuirk1Result == 1) {classQuirk1 += "a twig from the meeting tree that stands in the center of your village.";}
+			if (classQuirk1Result == 2) {classQuirk1 += "a vial of water from the source of a sacred river.";}
+			if (classQuirk1Result == 3) {classQuirk1 += "special herbs tied together in a bundle.";}
+			if (classQuirk1Result == 4) {classQuirk1 += "a small bronze bowl engraved with animal images.";}
+			if (classQuirk1Result == 5) {classQuirk1 += "a rattle made from a dried gourd and holly berries.";}
+			if (classQuirk1Result == 6) {classQuirk1 += "a miniature golden sickle handed down to you by your mentor.";}
+
+			int classQuirk2Result = roll (1, 6);
+			classQuirk2 = "You have chosen a guiding aspect, which has qualities you seek to emulate--";
+			if (classQuirk2Result == 1) {classQuirk2 += "yew trees remind you of renewing your mind and spirit, letting the old die and the new spring forth.";}
+			if (classQuirk2Result == 2) {classQuirk2 += "oak trees represent strength and vitality. Meditating under an oak fills your body and mind with resolve and fortitude.";}
+			if (classQuirk2Result == 3) {classQuirk2 += "the river’s endless flow reminds you of the great span of the world. You seek to act with the long-term interests of nature in mind.";}
+			if (classQuirk2Result == 4) {classQuirk2 += "the sea is a constant, churning cauldron of power and chaos. It reminds you that accepting change is necessary to sustain yourself in the world.";}
+			if (classQuirk2Result == 5) {classQuirk2 += "the birds in the sky are evidence that even the smallest creatures can survive if they remain above the fray.";}
+			if (classQuirk2Result == 6) {classQuirk2 += "as demonstrated by the actions of the wolf, an individual’s strength is nothing compared to the power of the pack.";}
+
+			int classQuirk3Result = roll (1, 6);
+			classQuirk3 = "You learned the basics of druidic teachings and magic from a mentor; ";
+			if (classQuirk3Result == 1) {classQuirk3 += "your mentor was a wise treant who taught you to think in terms of years and decades rather than days or months.";}
+			if (classQuirk3Result == 2) {classQuirk3 += "you were tutored by a dryad who watched over a slumbering portal to the Abyss. During your training, you were tasked with watching for hidden threats to the world.";}
+			if (classQuirk3Result == 3) {classQuirk3 += "your tutor always interacted with you in the form of a falcon. You never saw the tutor’s humanoid form.";}
+			if (classQuirk3Result == 4) {classQuirk3 += "you were one of several youngsters who were mentored by an old druid, until one of your fellow pupils betrayed your group and killed your master.";}
+			if (classQuirk3Result == 5) {classQuirk3 += "your mentor has appeared to you only in visions. You have yet to meet this person, and you are not sure such a person exists in mortal form.";}
+			if (classQuirk3Result == 6) {classQuirk3 += "your mentor was a werebear who taught you to treat all living things with equal regard.";}
+		}
+
+		if (playerClass == "Fighter") {
+			int classQuirk1Result = roll (1, 6);
+			classQuirk1 = "You bear a heraldic sign on your gear--";
+			if (classQuirk1Result == 1) {classQuirk1 += "a rampant golden dragon on a green field, representing valor and a quest for wealth.";}
+			if (classQuirk1Result == 2) {classQuirk1 += "the fist of a storm giant clutching lightning before a storm cloud, symbolizing wrath and power.";}
+			if (classQuirk1Result == 3) {classQuirk1 += "crossed greatswords in front of a castle gate, signifying the defense of a city or kingdom.";}
+			if (classQuirk1Result == 4) {classQuirk1 += "a skull with a dagger through it, representing the doom you bring to your enemies.";}
+			if (classQuirk1Result == 5) {classQuirk1 += "a phoenix in a ring of fire, an expression of an indomitable spirit.";}
+			if (classQuirk1Result == 6) {classQuirk1 += "three drops of blood beneath a horizontal sword blade on a black background, symbolizing three foes you have sworn to kill.";}
+
+			int classQuirk2Result = roll (1, 6);
+			classQuirk2 = "You learned some of your martial skills from an instructor, who was ";
+			if (classQuirk2Result == 1) {classQuirk2 += "a gladiator. Your instructor was a slave who fought for freedom in the arena, or one who willingly chose the gladiator’s life to earn money and fame.";}
+			if (classQuirk2Result == 2) {classQuirk2 += "military. Your trainer served with a group of soldiers and knows much about working as a team.";}
+			if (classQuirk2Result == 3) {classQuirk2 += "part of the city watch. Crowd control and peacekeeping are your instructor’s specialties.";}
+			if (classQuirk2Result == 4) {classQuirk2 += "a tribal warrior. Your instructor grew up in a tribe, where fighting for one’s life was practically an everyday occurrence.";}
+			if (classQuirk2Result == 5) {classQuirk2 += "a street fighter. Your trainer excels at urban combat, combining close-quarters work with silence and efficiency.";}
+			if (classQuirk2Result == 6) {classQuirk2 += "a weapon master. Your mentor helped you to become one with your chosen weapon, by imparting highly specialized knowledge of how to wield it most effectively.";}
+
+			int classQuirk3Result = roll (1, 6);
+			classQuirk3 = "Like all of the greatest warriors, you fight with a signature style. Your style is ";
+			if (classQuirk3Result == 1) {classQuirk3 += "elegant; you move with precise grace and total control, never using more energy than you need.";}
+			if (classQuirk3Result == 2) {classQuirk3 += "brutal; your attacks rain down like hammer blows, meant to splinter bone or send blood flying.";}
+			if (classQuirk3Result == 3) {classQuirk3 += "cunning; you dart in to attack at just the right moment and use small-scale tactics to tilt the odds in your favor.";}
+			if (classQuirk3Result == 4) {classQuirk3 += "effortless; you rarely perspire or display anything other than a stoic expression in battle. ";}
+			if (classQuirk3Result == 5) {classQuirk3 += "energetic; you sing and laugh during combat as your spirit soars. You are happiest when you have a foe in front of you and a weapon in hand.";}
+			if (classQuirk3Result == 6) {classQuirk3 += "sinister; you scowl and sneer while fighting, and you enjoy mocking your foes as you defeat them.";}
+		}
+
+		if (playerClass == "Monk") {
+			int classQuirk1Result = roll (1, 6);
+			classQuirk1 = "";
+			if (classQuirk1Result == 1) {classQuirk1 += "";}
+			if (classQuirk1Result == 2) {classQuirk1 += "";}
+			if (classQuirk1Result == 3) {classQuirk1 += "";}
+			if (classQuirk1Result == 4) {classQuirk1 += "";}
+			if (classQuirk1Result == 5) {classQuirk1 += "";}
+			if (classQuirk1Result == 6) {classQuirk1 += "";}
+
+			int classQuirk2Result = roll (1, 6);
+			classQuirk2 = "";
+			if (classQuirk2Result == 1) {classQuirk2 += "";}
+			if (classQuirk2Result == 2) {classQuirk2 += "";}
+			if (classQuirk2Result == 3) {classQuirk2 += "";}
+			if (classQuirk2Result == 4) {classQuirk2 += "";}
+			if (classQuirk2Result == 5) {classQuirk2 += "";}
+			if (classQuirk2Result == 6) {classQuirk2 += "";}
+
+			int classQuirk3Result = roll (1, 6);
+			classQuirk3 = "";
+			if (classQuirk3Result == 1) {classQuirk3 += "";}
+			if (classQuirk3Result == 2) {classQuirk3 += "";}
+			if (classQuirk3Result == 3) {classQuirk3 += "";}
+			if (classQuirk3Result == 4) {classQuirk3 += "";}
+			if (classQuirk3Result == 5) {classQuirk3 += "";}
+			if (classQuirk3Result == 6) {classQuirk3 += "";}
+		}
+
+		if (playerClass == "Paladin") {
+			int classQuirk1Result = roll (1, 6);
+			classQuirk1 = "";
+			if (classQuirk1Result == 1) {classQuirk1 += "";}
+			if (classQuirk1Result == 2) {classQuirk1 += "";}
+			if (classQuirk1Result == 3) {classQuirk1 += "";}
+			if (classQuirk1Result == 4) {classQuirk1 += "";}
+			if (classQuirk1Result == 5) {classQuirk1 += "";}
+			if (classQuirk1Result == 6) {classQuirk1 += "";}
+
+			int classQuirk2Result = roll (1, 6);
+			classQuirk2 = "";
+			if (classQuirk2Result == 1) {classQuirk2 += "";}
+			if (classQuirk2Result == 2) {classQuirk2 += "";}
+			if (classQuirk2Result == 3) {classQuirk2 += "";}
+			if (classQuirk2Result == 4) {classQuirk2 += "";}
+			if (classQuirk2Result == 5) {classQuirk2 += "";}
+			if (classQuirk2Result == 6) {classQuirk2 += "";}
+
+			int classQuirk3Result = roll (1, 6);
+			classQuirk3 = "";
+			if (classQuirk3Result == 1) {classQuirk3 += "";}
+			if (classQuirk3Result == 2) {classQuirk3 += "";}
+			if (classQuirk3Result == 3) {classQuirk3 += "";}
+			if (classQuirk3Result == 4) {classQuirk3 += "";}
+			if (classQuirk3Result == 5) {classQuirk3 += "";}
+			if (classQuirk3Result == 6) {classQuirk3 += "";}
+		}
+
+		if (playerClass == "Ranger") {
+			int classQuirk1Result = roll (1, 6);
+			classQuirk1 = "";
+			if (classQuirk1Result == 1) {classQuirk1 += "";}
+			if (classQuirk1Result == 2) {classQuirk1 += "";}
+			if (classQuirk1Result == 3) {classQuirk1 += "";}
+			if (classQuirk1Result == 4) {classQuirk1 += "";}
+			if (classQuirk1Result == 5) {classQuirk1 += "";}
+			if (classQuirk1Result == 6) {classQuirk1 += "";}
+
+			int classQuirk2Result = roll (1, 6);
+			classQuirk2 = "";
+			if (classQuirk2Result == 1) {classQuirk2 += "";}
+			if (classQuirk2Result == 2) {classQuirk2 += "";}
+			if (classQuirk2Result == 3) {classQuirk2 += "";}
+			if (classQuirk2Result == 4) {classQuirk2 += "";}
+			if (classQuirk2Result == 5) {classQuirk2 += "";}
+			if (classQuirk2Result == 6) {classQuirk2 += "";}
+
+			int classQuirk3Result = roll (1, 6);
+			classQuirk3 = "";
+			if (classQuirk3Result == 1) {classQuirk3 += "";}
+			if (classQuirk3Result == 2) {classQuirk3 += "";}
+			if (classQuirk3Result == 3) {classQuirk3 += "";}
+			if (classQuirk3Result == 4) {classQuirk3 += "";}
+			if (classQuirk3Result == 5) {classQuirk3 += "";}
+			if (classQuirk3Result == 6) {classQuirk3 += "";}
+		}
+
+		if (playerClass == "Rogue") {
+			int classQuirk1Result = roll (1, 6);
+			classQuirk1 = "";
+			if (classQuirk1Result == 1) {classQuirk1 += "";}
+			if (classQuirk1Result == 2) {classQuirk1 += "";}
+			if (classQuirk1Result == 3) {classQuirk1 += "";}
+			if (classQuirk1Result == 4) {classQuirk1 += "";}
+			if (classQuirk1Result == 5) {classQuirk1 += "";}
+			if (classQuirk1Result == 6) {classQuirk1 += "";}
+
+			int classQuirk2Result = roll (1, 6);
+			classQuirk2 = "";
+			if (classQuirk2Result == 1) {classQuirk2 += "";}
+			if (classQuirk2Result == 2) {classQuirk2 += "";}
+			if (classQuirk2Result == 3) {classQuirk2 += "";}
+			if (classQuirk2Result == 4) {classQuirk2 += "";}
+			if (classQuirk2Result == 5) {classQuirk2 += "";}
+			if (classQuirk2Result == 6) {classQuirk2 += "";}
+
+			int classQuirk3Result = roll (1, 6);
+			classQuirk3 = "";
+			if (classQuirk3Result == 1) {classQuirk3 += "";}
+			if (classQuirk3Result == 2) {classQuirk3 += "";}
+			if (classQuirk3Result == 3) {classQuirk3 += "";}
+			if (classQuirk3Result == 4) {classQuirk3 += "";}
+			if (classQuirk3Result == 5) {classQuirk3 += "";}
+			if (classQuirk3Result == 6) {classQuirk3 += "";}
+		}
+
+		if (playerClass == "Sorcerer") {
+			int classQuirk1Result = roll (1, 6);
+			classQuirk1 = "";
+			if (classQuirk1Result == 1) {classQuirk1 += "";}
+			if (classQuirk1Result == 2) {classQuirk1 += "";}
+			if (classQuirk1Result == 3) {classQuirk1 += "";}
+			if (classQuirk1Result == 4) {classQuirk1 += "";}
+			if (classQuirk1Result == 5) {classQuirk1 += "";}
+			if (classQuirk1Result == 6) {classQuirk1 += "";}
+
+			int classQuirk2Result = roll (1, 6);
+			classQuirk2 = "";
+			if (classQuirk2Result == 1) {classQuirk2 += "";}
+			if (classQuirk2Result == 2) {classQuirk2 += "";}
+			if (classQuirk2Result == 3) {classQuirk2 += "";}
+			if (classQuirk2Result == 4) {classQuirk2 += "";}
+			if (classQuirk2Result == 5) {classQuirk2 += "";}
+			if (classQuirk2Result == 6) {classQuirk2 += "";}
+
+			int classQuirk3Result = roll (1, 6);
+			classQuirk3 = "";
+			if (classQuirk3Result == 1) {classQuirk3 += "";}
+			if (classQuirk3Result == 2) {classQuirk3 += "";}
+			if (classQuirk3Result == 3) {classQuirk3 += "";}
+			if (classQuirk3Result == 4) {classQuirk3 += "";}
+			if (classQuirk3Result == 5) {classQuirk3 += "";}
+			if (classQuirk3Result == 6) {classQuirk3 += "";}
+		}
+
+		if (playerClass == "Warlock") {
+			int classQuirk1Result = roll (1, 6);
+			classQuirk1 = "";
+			if (classQuirk1Result == 1) {classQuirk1 += "";}
+			if (classQuirk1Result == 2) {classQuirk1 += "";}
+			if (classQuirk1Result == 3) {classQuirk1 += "";}
+			if (classQuirk1Result == 4) {classQuirk1 += "";}
+			if (classQuirk1Result == 5) {classQuirk1 += "";}
+			if (classQuirk1Result == 6) {classQuirk1 += "";}
+
+			int classQuirk2Result = roll (1, 6);
+			classQuirk2 = "";
+			if (classQuirk2Result == 1) {classQuirk2 += "";}
+			if (classQuirk2Result == 2) {classQuirk2 += "";}
+			if (classQuirk2Result == 3) {classQuirk2 += "";}
+			if (classQuirk2Result == 4) {classQuirk2 += "";}
+			if (classQuirk2Result == 5) {classQuirk2 += "";}
+			if (classQuirk2Result == 6) {classQuirk2 += "";}
+
+			int classQuirk3Result = roll (1, 6);
+			classQuirk3 = "";
+			if (classQuirk3Result == 1) {classQuirk3 += "";}
+			if (classQuirk3Result == 2) {classQuirk3 += "";}
+			if (classQuirk3Result == 3) {classQuirk3 += "";}
+			if (classQuirk3Result == 4) {classQuirk3 += "";}
+			if (classQuirk3Result == 5) {classQuirk3 += "";}
+			if (classQuirk3Result == 6) {classQuirk3 += "";}
+		}
+
+		if (playerClass == "Wizard") {
+			int classQuirk1Result = roll (1, 6);
+			classQuirk1 = "";
+			if (classQuirk1Result == 1) {classQuirk1 += "";}
+			if (classQuirk1Result == 2) {classQuirk1 += "";}
+			if (classQuirk1Result == 3) {classQuirk1 += "";}
+			if (classQuirk1Result == 4) {classQuirk1 += "";}
+			if (classQuirk1Result == 5) {classQuirk1 += "";}
+			if (classQuirk1Result == 6) {classQuirk1 += "";}
+
+			int classQuirk2Result = roll (1, 6);
+			classQuirk2 = "";
+			if (classQuirk2Result == 1) {classQuirk2 += "";}
+			if (classQuirk2Result == 2) {classQuirk2 += "";}
+			if (classQuirk2Result == 3) {classQuirk2 += "";}
+			if (classQuirk2Result == 4) {classQuirk2 += "";}
+			if (classQuirk2Result == 5) {classQuirk2 += "";}
+			if (classQuirk2Result == 6) {classQuirk2 += "";}
+
+			int classQuirk3Result = roll (1, 6);
+			classQuirk3 = "";
+			if (classQuirk3Result == 1) {classQuirk3 += "";}
+			if (classQuirk3Result == 2) {classQuirk3 += "";}
+			if (classQuirk3Result == 3) {classQuirk3 += "";}
+			if (classQuirk3Result == 4) {classQuirk3 += "";}
+			if (classQuirk3Result == 5) {classQuirk3 += "";}
+			if (classQuirk3Result == 6) {classQuirk3 += "";}
+		}
+
+		string output = classQuirk1 + " " + classQuirk2 + " " + classQuirk3;
+		return output;
 	}
 
 	string RollBackground () {
@@ -909,7 +1265,7 @@ public class CharGen : MonoBehaviour {
 
 		if (playerBackground == "Urchin")
 		{
-			if (backgroundPersonalDecisionResult == 1) {playerBackgroundPersonalDecision = "wanderlust caused you to leave your family to see the world. You look after myself.";}
+			if (backgroundPersonalDecisionResult == 1) {playerBackgroundPersonalDecision = "wanderlust caused you to leave your family to see the world. You look after yourself.";}
 			if (backgroundPersonalDecisionResult == 2) {playerBackgroundPersonalDecision = "you ran away from a bad situation at home and made your own way in the world.";}
 			if (backgroundPersonalDecisionResult == 3) {playerBackgroundPersonalDecision = "monsters wiped out your village, and you were the sole survivor. You had to find a way to survive.";}
 			if (backgroundPersonalDecisionResult == 4) {playerBackgroundPersonalDecision = "a notorious thief looked after you and other orphans, and you spied and stole to earn your keep.";}
@@ -960,7 +1316,7 @@ public class CharGen : MonoBehaviour {
 			if (classPersonalDecisionResult == 3) {playerClassPersonalDecision = "you have always had an affinity for animals, so you explored my talent to see how you could best use it.";}
 			if (classPersonalDecisionResult == 4) {playerClassPersonalDecision = "you befriended a druid and were moved by druidic teachings. You decided to follow your friend’s guidance and give something back to the world.";}
 			if (classPersonalDecisionResult == 5) {playerClassPersonalDecision = "while you were growing up, you saw spirits all around you — entities no one else could perceive. You sought out the druids to help you understand the visions and communicate with these beings.";}
-			if (classPersonalDecisionResult == 6) {playerClassPersonalDecision = "you have always felt disgust for creatures of unnatural origin. For this reason, you immersed myself in the study of the druidic mysteries and became a champion of the natural order.";}
+			if (classPersonalDecisionResult == 6) {playerClassPersonalDecision = "you have always felt disgust for creatures of unnatural origin. For this reason, you immersed yourself in the study of the druidic mysteries and became a champion of the natural order.";}
 		}
 
 		if (playerClass == "Fighter") 
@@ -1126,8 +1482,8 @@ public class CharGen : MonoBehaviour {
 			if (missingBodyPartsResult == 3) {missingBodyPart = roll(1,4) + " toes";}
 
 		if (AdventureResult >= 1 && AdventureResult <= 10) {AdventureText = "You nearly died. You have nasty scars on your body, and you are missing " + missingBodyPart + ".\n";}
-		if (AdventureResult >= 11 && AdventureResult <= 20) {AdventureText = "You suffered a grievous injury. Although the wound healed, it still pains you from time to time." + ".\n";}
-		if (AdventureResult >= 21 && AdventureResult <= 30) {AdventureText = "You were wounded, but in time you fully recovered." + ".\n";}
+		if (AdventureResult >= 11 && AdventureResult <= 20) {AdventureText = "You suffered a grievous injury. Although the wound healed, it still pains you from time to time.\n";}
+		if (AdventureResult >= 21 && AdventureResult <= 30) {AdventureText = "You were wounded, but in time you fully recovered.\n";}
 
 		int adventureDiseaseResult = roll (1, 3);
 			if (adventureDiseaseResult == 1) {adventureDisease = "a persistent cough";}
@@ -1140,13 +1496,13 @@ public class CharGen : MonoBehaviour {
 			if (adventurePoisonSourceResult == 1) {adventureDisease = "trap";}
 			if (adventurePoisonSourceResult == 2) {adventureDisease = "monster";}
 
-		if (AdventureResult >= 41 && AdventureResult <= 50) {AdventureText = "You were poisoned by a " + adventurePoisonSource + " . You recovered, but the next time you must make a saving throw against poison, you make the saving throw with disadvantage." + ".\n";}
-		if (AdventureResult >= 51 && AdventureResult <= 60) {AdventureText = "You lost something of sentimental value to you during your adventure. Remove one trinket from your possessions." + ".\n";}
-		if (AdventureResult >= 61 && AdventureResult <= 70) {AdventureText = "You were terribly frightened by something you encountered and ran away, abandoning your companions to their fate." + ".\n";}
-		if (AdventureResult >= 71 && AdventureResult <= 80) {AdventureText = "You learned a great deal during your adventure. The next time you make an ability check or a saving throw, you have advantage on the roll." + ".\n";}
-		if (AdventureResult >= 81 && AdventureResult <= 90) {AdventureText = "You found some treasure on your adventure. You have " + roll(2,6) + " gp left from your share of it." + ".\n";}
+		if (AdventureResult >= 41 && AdventureResult <= 50) {AdventureText = "You were poisoned by a " + adventurePoisonSource + " . You recovered, but the next time you must make a saving throw against poison, you make the saving throw with disadvantage.\n";}
+		if (AdventureResult >= 51 && AdventureResult <= 60) {AdventureText = "You lost something of sentimental value to you during your adventure. Remove one trinket from your possessions.\n";}
+		if (AdventureResult >= 61 && AdventureResult <= 70) {AdventureText = "You were terribly frightened by something you encountered and ran away, abandoning your companions to their fate.\n";}
+		if (AdventureResult >= 71 && AdventureResult <= 80) {AdventureText = "You learned a great deal during your adventure. The next time you make an ability check or a saving throw, you have advantage on the roll.\n";}
+		if (AdventureResult >= 81 && AdventureResult <= 90) {AdventureText = "You found some treasure on your adventure. You have " + roll(2,6) + " gp left from your share of it.\n";}
 		if (AdventureResult >= 91 && AdventureResult <= 99) {AdventureText = "You found a considerable amount of treasure on your adventure. You have " + (roll(1,20) + 50) + " gp left from your share of it.\n";}
-		if (AdventureResult == 100) {lifeEventText = "You came across a common magic item (of the DM’s choice)." + ".\n";}
+		if (AdventureResult == 100) {lifeEventText = "You came across a common magic item (of the DM’s choice).\n";}
 		return AdventureText;
 	}
 
@@ -1217,7 +1573,7 @@ public class CharGen : MonoBehaviour {
 			if (punishmentImprisonmentTypeResult == 3) {punishmentImprisonmentType = "performing hard labor";}
 
 		int punishmentServedTimeResult = roll(1,2);
-		if (punishmentServedTimeResult == 1) {punishmentServedTime = "served a sentence of " + roll(1,4) + "years";}
+		if (punishmentServedTimeResult == 1) {punishmentServedTime = "served a sentence of " + roll(1,4) + " years";}
 		if (punishmentServedTimeResult == 2) {punishmentServedTime = "escaped after " + roll(1,4) + "years";}
 
 		if (punishmentResult >= 9 && punishmentResult <= 12) {PunishmentText = "You were caught and convicted. You spent time " + punishmentImprisonmentType + ". You " + punishmentServedTime;}
