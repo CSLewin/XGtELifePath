@@ -20,6 +20,7 @@ public class CharGen : MonoBehaviour {
 	public string classQuirk1; 
 	public string classQuirk2; 
 	public string classQuirk3;
+	public string classQuirk4; //only used by Bards, Paladins, and Sorcerers. I guess they're extra quirky.
 
 	public string playerParentPresence;
 	public bool parentsKnown;
@@ -104,6 +105,7 @@ public class CharGen : MonoBehaviour {
 			siblingText = null;
 			causeOfDeath = null;
 			lifeEventText = null;
+			classQuirk4 = null;
 
 			GenerateCharacter ();
 
@@ -556,6 +558,12 @@ public class CharGen : MonoBehaviour {
 			if (classQuirk3Result == 4) {classQuirk3 += "the first and last public performance of “Mirt, Man about Town”.";}
 			if (classQuirk3Result == 5) {classQuirk3 += "the time on stage when your wig caught fire and you threw it down — which set fire to the stage.";}
 			if (classQuirk3Result == 6) {classQuirk3 += "when you sat on your lute by mistake during the final stanza of “Starlight Serenade”.";}
+
+			int classQuirk4Result = roll (1, 3);
+			classQuirk4 = "Your muse (for the moment) is ";
+			if (classQuirk4Result == 1) {classQuirk4 += "nature. The beauty and mystery of the natural world inspire you, and your creativity blossoms when you wander in wild places.";}
+			if (classQuirk4Result == 2) {classQuirk4 += "love. You search for the essence of true love, and the full spectrum of that most precious and mysterious of emotions can be found everywhere.";}
+			if (classQuirk4Result == 3) {classQuirk4 += "conflict. You strive to study this eternal aspect of life and immortalize both the epic and the dire in your stories and songs.";}
 		}
 
 		if (playerClass == "Cleric") {
@@ -647,213 +655,232 @@ public class CharGen : MonoBehaviour {
 
 		if (playerClass == "Monk") {
 			int classQuirk1Result = roll (1, 6);
-			classQuirk1 = "";
-			if (classQuirk1Result == 1) {classQuirk1 += "";}
-			if (classQuirk1Result == 2) {classQuirk1 += "";}
-			if (classQuirk1Result == 3) {classQuirk1 += "";}
-			if (classQuirk1Result == 4) {classQuirk1 += "";}
-			if (classQuirk1Result == 5) {classQuirk1 += "";}
-			if (classQuirk1Result == 6) {classQuirk1 += "";}
+			classQuirk1 = "You spent time in a monastery, which ";
+			if (classQuirk1Result == 1) {classQuirk1 += "is carved out of a mountainside, where it looms over a treacherous pass.";}
+			if (classQuirk1Result == 2) {classQuirk1 += "is high in the branches of an immense tree in the Feywild.";}
+			if (classQuirk1Result == 3) {classQuirk1 += "was founded long ago by a cloud giant and is inside a cloud castle that can be reached only by flying.";}
+			if (classQuirk1Result == 4) {classQuirk1 += "is built beside a volcanic system of hot springs, geysers, and sulfur pools. You regularly received visits from azer traders.";}
+			if (classQuirk1Result == 5) {classQuirk1 += "was founded by gnomes and is an underground labyrinth of tunnels and rooms.";}
+			if (classQuirk1Result == 6) {classQuirk1 += "was carved from an iceberg in the frozen reaches of the world.";}
 
 			int classQuirk2Result = roll (1, 6);
-			classQuirk2 = "";
-			if (classQuirk2Result == 1) {classQuirk2 += "";}
-			if (classQuirk2Result == 2) {classQuirk2 += "";}
-			if (classQuirk2Result == 3) {classQuirk2 += "";}
-			if (classQuirk2Result == 4) {classQuirk2 += "";}
-			if (classQuirk2Result == 5) {classQuirk2 += "";}
-			if (classQuirk2Result == 6) {classQuirk2 += "";}
+			classQuirk2 = "Your monastic order gives special regard to ";
+			if (classQuirk2Result == 1) {classQuirk2 += "Monkey. Quick reflexes and the ability to travel through the treetops are two of the reasons why your order admires the monkey.";}
+			if (classQuirk2Result == 2) {classQuirk2 += "Dragon Turtle. The monks of your seaside monastery venerate the dragon turtle, reciting ancient prayers and offering garlands of flowers to honor this living spirit of the sea.";}
+			if (classQuirk2Result == 3) {classQuirk2 += "Ki-rin. Your monastery sees its main purpose as watching over and protecting the land in the manner of the ki-rin.";}
+			if (classQuirk2Result == 4) {classQuirk2 += "Owlbear. The monks of your monastery revere a family of owlbears and have coexisted with them for generations.";}
+			if (classQuirk2Result == 5) {classQuirk2 += "Hydra. Your order singles out the hydra for its ability to unleash several attacks simultaneously.";}
+			if (classQuirk2Result == 6) {classQuirk2 += "Dragon. A dragon once laired within your monastery. Its influence remains long after its departure.";}
 
 			int classQuirk3Result = roll (1, 6);
-			classQuirk3 = "";
-			if (classQuirk3Result == 1) {classQuirk3 += "";}
-			if (classQuirk3Result == 2) {classQuirk3 += "";}
-			if (classQuirk3Result == 3) {classQuirk3 += "";}
-			if (classQuirk3Result == 4) {classQuirk3 += "";}
-			if (classQuirk3Result == 5) {classQuirk3 += "";}
-			if (classQuirk3Result == 6) {classQuirk3 += "";}
+			classQuirk3 = "You studied under a master of your order; ";
+			if (classQuirk3Result == 1) {classQuirk3 += "your master was a tyrant whom you had to defeat in single combat to complete your instruction.";}
+			if (classQuirk3Result == 2) {classQuirk3 += "your master was kindly and taught you to pursue the cause of peace.";}
+			if (classQuirk3Result == 3) {classQuirk3 += "your master was merciless in pushing you to your limits. You nearly lost an eye during one especially brutal practice session.";}
+			if (classQuirk3Result == 4) {classQuirk3 += "your master seemed goodhearted while tutoring you, but betrayed your monastery in the end.";}
+			if (classQuirk3Result == 5) {classQuirk3 += "your master was cold and distant. You suspect that the two of you might be related.";}
+			if (classQuirk3Result == 6) {classQuirk3 += "your master was kind and generous, never critical of your progress. Nevertheless, you feel you never fully lived up to the expectations placed on you.";}
 		}
 
 		if (playerClass == "Paladin") {
 			int classQuirk1Result = roll (1, 6);
-			classQuirk1 = "";
-			if (classQuirk1Result == 1) {classQuirk1 += "";}
-			if (classQuirk1Result == 2) {classQuirk1 += "";}
-			if (classQuirk1Result == 3) {classQuirk1 += "";}
-			if (classQuirk1Result == 4) {classQuirk1 += "";}
-			if (classQuirk1Result == 5) {classQuirk1 += "";}
-			if (classQuirk1Result == 6) {classQuirk1 += "";}
+			classQuirk1 = "Your oath gives you purpose, but you strive toward a personal goal--";
+			if (classQuirk1Result == 1) {classQuirk1 += "peace. You fight so that future generations will not have to.";}
+			if (classQuirk1Result == 2) {classQuirk1 += "revenge. Your oath is the vehicle through which you will right an ancient wrong.";}
+			if (classQuirk1Result == 3) {classQuirk1 += "duty. You will live up to what you have sworn to do, or die trying.";}
+			if (classQuirk1Result == 4) {classQuirk1 += "leadership. You will win a great battle that bards will sing about, and in so doing, you will become an example to inspire others.";}
+			if (classQuirk1Result == 5) {classQuirk1 += "faith. You know your path is righteous, or else the gods would not have set you upon it.";}
+			if (classQuirk1Result == 6) {classQuirk1 += "glory. You will lead the world into a grand new era, one that will be branded with your name.";}
 
 			int classQuirk2Result = roll (1, 6);
-			classQuirk2 = "";
-			if (classQuirk2Result == 1) {classQuirk2 += "";}
-			if (classQuirk2Result == 2) {classQuirk2 += "";}
-			if (classQuirk2Result == 3) {classQuirk2 += "";}
-			if (classQuirk2Result == 4) {classQuirk2 += "";}
-			if (classQuirk2Result == 5) {classQuirk2 += "";}
-			if (classQuirk2Result == 6) {classQuirk2 += "";}
+			classQuirk2 = "Upon your banner, flag, or clothing, you bear the symbol of ";
+			if (classQuirk2Result == 1) {classQuirk2 += "a dragon, emblematic of your nobility in peace and your ferocity in combat.";}
+			if (classQuirk2Result == 2) {classQuirk2 += "a clenched fist, because you are always ready to fight for your beliefs.";}
+			if (classQuirk2Result == 3) {classQuirk2 += "an upraised open hand, indicating your preference for diplomacy over combat.";}
+			if (classQuirk2Result == 4) {classQuirk2 += "a red heart, showing the world your commitment to justice.";}
+			if (classQuirk2Result == 5) {classQuirk2 += "a black heart, signifying that emotions such as pity do not sway your dedication to your oath.";}
+			if (classQuirk2Result == 6) {classQuirk2 += "an unblinking eye, meaning that you are ever alert to all threats against your cause.";}
 
 			int classQuirk3Result = roll (1, 6);
-			classQuirk3 = "";
-			if (classQuirk3Result == 1) {classQuirk3 += "";}
-			if (classQuirk3Result == 2) {classQuirk3 += "";}
-			if (classQuirk3Result == 3) {classQuirk3 += "";}
-			if (classQuirk3Result == 4) {classQuirk3 += "";}
-			if (classQuirk3Result == 5) {classQuirk3 += "";}
-			if (classQuirk3Result == 6) {classQuirk3 += "";}
+			classQuirk3 = "You remain vigilant against the actions of your nemesis, ";
+			if (classQuirk3Result == 1) {classQuirk3 += "a mighty orc war chief who threatens to overrun and destroy everything you hold sacred.";}
+			if (classQuirk3Result == 2) {classQuirk3 += "a fiend or a celestial, the agent of a power of the Outer Planes, who has been charged with corrupting or redeeming you, as appropriate.";}
+			if (classQuirk3Result == 3) {classQuirk3 += "a dragon whose servants dog your steps.";}
+			if (classQuirk3Result == 4) {classQuirk3 += "a high priest who sees you as a misguided fool and wants you to abandon your religion.";}
+			if (classQuirk3Result == 5) {classQuirk3 += "a rival paladin who trained with you but became an oath-breaker and holds you responsible.";}
+			if (classQuirk3Result == 6) {classQuirk3 += "a vampire who has sworn revenge against all paladins after being defeated by one.";}
+
+			int classQuirk4Result = roll (1, 6);
+			classQuirk4 = "Although you are devoted, you are mortal, and thusly flawed. You struggle with your ";
+			if (classQuirk4Result == 1) {classQuirk4 += "fury; when your anger is roused, you have trouble thinking straight, and you fear you might do something you’ll regret.";}
+			if (classQuirk4Result == 2) {classQuirk4 += "pride; your deeds are noteworthy, and no one takes note of them more often than you.";}
+			if (classQuirk4Result == 3) {classQuirk4 += "lust; you can’t resist an attractive face and a pleasant smile.";}
+			if (classQuirk4Result == 4) {classQuirk4 += "envy; you are mindful of what some famous folk have accomplished, and you feel inadequate when your deeds don’t compare to theirs.";}
+			if (classQuirk4Result == 5) {classQuirk4 += "despair; you consider the great strength of the enemies you must defeat, and at times you see no way to achieve final victory.";}
+			if (classQuirk4Result == 6) {classQuirk4 += "greed; regardless of how much glory and treasure you amass, it’s never enough for you.";}
 		}
 
 		if (playerClass == "Ranger") {
 			int classQuirk1Result = roll (1, 6);
-			classQuirk1 = "";
-			if (classQuirk1Result == 1) {classQuirk1 += "";}
-			if (classQuirk1Result == 2) {classQuirk1 += "";}
-			if (classQuirk1Result == 3) {classQuirk1 += "";}
-			if (classQuirk1Result == 4) {classQuirk1 += "";}
-			if (classQuirk1Result == 5) {classQuirk1 += "";}
-			if (classQuirk1Result == 6) {classQuirk1 += "";}
+			classQuirk1 = "Your view of civilization is colored by your time in the wilds; ";
+			if (classQuirk1Result == 1) {classQuirk1 += "Towns and cities are the best places for those who can’t survive on their own.";}
+			if (classQuirk1Result == 2) {classQuirk1 += "The advancement of civilization is the best way to thwart chaos, but its reach must be monitored.";}
+			if (classQuirk1Result == 3) {classQuirk1 += "Towns and cities are a necessary evil, but once the wilderness is purged of supernatural threats, we will need them no more.";}
+			if (classQuirk1Result == 4) {classQuirk1 += "Walls are for cowards, who huddle behind them while others do the work of making the world safe.";}
+			if (classQuirk1Result == 5) {classQuirk1 += "Visiting a town is not unpleasant, but after a few days you feel the irresistible call to return to the wild.";}
+			if (classQuirk1Result == 6) {classQuirk1 += "Cities breed weakness by isolating folk from the harsh lessons of the wild.";}
 
 			int classQuirk2Result = roll (1, 6);
-			classQuirk2 = "";
-			if (classQuirk2Result == 1) {classQuirk2 += "";}
-			if (classQuirk2Result == 2) {classQuirk2 += "";}
-			if (classQuirk2Result == 3) {classQuirk2 += "";}
-			if (classQuirk2Result == 4) {classQuirk2 += "";}
-			if (classQuirk2Result == 5) {classQuirk2 += "";}
-			if (classQuirk2Result == 6) {classQuirk2 += "";}
+			classQuirk2 = "Your time in your homeland honed your bushcraft--";
+			if (classQuirk2Result == 1) {classQuirk2 += "you patrolled an ancient forest, darkened and corrupted by several crossings to the Shadowfell.";}
+			if (classQuirk2Result == 2) {classQuirk2 += "as part of a group of nomads, you acquired the skills for surviving in the desert.";}
+			if (classQuirk2Result == 3) {classQuirk2 += "your early life in the Underdark prepared you for the challenges of combating its denizens.";}
+			if (classQuirk2Result == 4) {classQuirk2 += "you dwelled on the edge of a swamp, in an area imperiled by land creatures as well as aquatic ones.";}
+			if (classQuirk2Result == 5) {classQuirk2 += "because you grew up among the peaks, finding the best path through the mountains is second nature to you.";}
+			if (classQuirk2Result == 6) {classQuirk2 += "you wandered the far north, learning how to protect yourself and prosper in a realm overrun by ice.";}
 
 			int classQuirk3Result = roll (1, 6);
-			classQuirk3 = "";
-			if (classQuirk3Result == 1) {classQuirk3 += "";}
-			if (classQuirk3Result == 2) {classQuirk3 += "";}
-			if (classQuirk3Result == 3) {classQuirk3 += "";}
-			if (classQuirk3Result == 4) {classQuirk3 += "";}
-			if (classQuirk3Result == 5) {classQuirk3 += "";}
-			if (classQuirk3Result == 6) {classQuirk3 += "";}
+			classQuirk3 = "You often dwell on your sworn enemy; ";
+			if (classQuirk3Result == 1) {classQuirk3 += "you seek revenge on nature’s behalf for the great transgressions your foe has committed.";}
+			if (classQuirk3Result == 2) {classQuirk3 += "your forebears or predecessors fought these creatures, and so shall you.";}
+			if (classQuirk3Result == 3) {classQuirk3 += "you bear no enmity toward your foe. You stalk such creatures as a hunter tracks down a wild animal.";}
+			if (classQuirk3Result == 4) {classQuirk3 += "you find your foe fascinating, and you collect books of tales and history concerning it.";}
+			if (classQuirk3Result == 5) {classQuirk3 += "you collect tokens of your fallen enemies to remind you of each kill.";}
+			if (classQuirk3Result == 6) {classQuirk3 += "you respect your chosen enemy, and you see your battles as a test of respective skills.";}
 		}
 
 		if (playerClass == "Rogue") {
 			int classQuirk1Result = roll (1, 6);
-			classQuirk1 = "";
-			if (classQuirk1Result == 1) {classQuirk1 += "";}
-			if (classQuirk1Result == 2) {classQuirk1 += "";}
-			if (classQuirk1Result == 3) {classQuirk1 += "";}
-			if (classQuirk1Result == 4) {classQuirk1 += "";}
-			if (classQuirk1Result == 5) {classQuirk1 += "";}
-			if (classQuirk1Result == 6) {classQuirk1 += "";}
+			classQuirk1 = "Even though it might mean trouble for you and your companions, you just can't resist ";
+			if (classQuirk1Result == 1) {classQuirk1 += "large gems.";}
+			if (classQuirk1Result == 2) {classQuirk1 += "a smile from a pretty face.";}
+			if (classQuirk1Result == 3) {classQuirk1 += "a new ring for your finger.";}
+			if (classQuirk1Result == 4) {classQuirk1 += "the chance to deflate someone’s ego.";}
+			if (classQuirk1Result == 5) {classQuirk1 += "the finest food and drink.";}
+			if (classQuirk1Result == 6) {classQuirk1 += "adding to your collection of exotic coins.";}
 
 			int classQuirk2Result = roll (1, 6);
-			classQuirk2 = "";
-			if (classQuirk2Result == 1) {classQuirk2 += "";}
-			if (classQuirk2Result == 2) {classQuirk2 += "";}
-			if (classQuirk2Result == 3) {classQuirk2 += "";}
-			if (classQuirk2Result == 4) {classQuirk2 += "";}
-			if (classQuirk2Result == 5) {classQuirk2 += "";}
-			if (classQuirk2Result == 6) {classQuirk2 += "";}
+			classQuirk2 = "You have your share of foes bested (or best avoided), but one adversary stands out: ";
+			if (classQuirk2Result == 1) {classQuirk2 += "the pirate captain on whose ship you once served; what you call moving on, the captain calls mutiny.";}
+			if (classQuirk2Result == 2) {classQuirk2 += "a master spy to whom you unwittingly fed bad information, which led to the assassination of the wrong target.";}
+			if (classQuirk2Result == 3) {classQuirk2 += "the master of the local thieves’ guild, who wants you to join the organization or leave town.";}
+			if (classQuirk2Result == 4) {classQuirk2 += "an art collector who uses illegal means to acquire masterpieces.";}
+			if (classQuirk2Result == 5) {classQuirk2 += "a fence who uses you as a messenger to set up illicit meetings.";}
+			if (classQuirk2Result == 6) {classQuirk2 += "the proprietor of an illegal pit fighting arena where you once took bets.";}
 
 			int classQuirk3Result = roll (1, 6);
-			classQuirk3 = "";
-			if (classQuirk3Result == 1) {classQuirk3 += "";}
-			if (classQuirk3Result == 2) {classQuirk3 += "";}
-			if (classQuirk3Result == 3) {classQuirk3 += "";}
-			if (classQuirk3Result == 4) {classQuirk3 += "";}
-			if (classQuirk3Result == 5) {classQuirk3 += "";}
-			if (classQuirk3Result == 6) {classQuirk3 += "";}
+			classQuirk3 = "You have benefited from the largess of others. ";
+			if (classQuirk3Result == 1) {classQuirk3 += "A smuggler kept you from getting caught but lost a valuable shipment in doing so. Now you owe that person an equally valuable favor.";}
+			if (classQuirk3Result == 2) {classQuirk3 += "The Beggar King has hidden you from your pursuers many times, in return for future considerations.";}
+			if (classQuirk3Result == 3) {classQuirk3 += "A magistrate once kept you out of jail in return for information on a powerful crime lord.";}
+			if (classQuirk3Result == 4) {classQuirk3 += "Your parents used their savings to bail you out of trouble in your younger days and are now destitute.";}
+			if (classQuirk3Result == 5) {classQuirk3 += "A dragon didn’t eat you when it had a chance, and in return you promised to set aside choice pieces of treasure for it.";}
+			if (classQuirk3Result == 6) {classQuirk3 += "A druid once helped you out of a tight spot; now any random animal you see could be that benefactor, perhaps come to claim a return favor.";}
 		}
 
 		if (playerClass == "Sorcerer") {
 			int classQuirk1Result = roll (1, 6);
-			classQuirk1 = "";
-			if (classQuirk1Result == 1) {classQuirk1 += "";}
-			if (classQuirk1Result == 2) {classQuirk1 += "";}
-			if (classQuirk1Result == 3) {classQuirk1 += "";}
-			if (classQuirk1Result == 4) {classQuirk1 += "";}
-			if (classQuirk1Result == 5) {classQuirk1 += "";}
-			if (classQuirk1Result == 6) {classQuirk1 += "";}
+			classQuirk1 = "The source of your arcane power is potent--";
+			if (classQuirk1Result == 1) {classQuirk1 += "your power arises from your family’s bloodline. You are related to some powerful creature, or you inherited a blessing or a curse.";}
+			if (classQuirk1Result == 2) {classQuirk1 += "you are the reincarnation of a being from another plane of existence.";}
+			if (classQuirk1Result == 3) {classQuirk1 += "a powerful entity entered the world. Its magic changed you.";}
+			if (classQuirk1Result == 4) {classQuirk1 += "your birth was prophesied in an ancient text, and you are foretold to use your power for terrible ends.";}
+			if (classQuirk1Result == 5) {classQuirk1 += "you are the product of generations of careful, selective breeding.";}
+			if (classQuirk1Result == 6) {classQuirk1 += "you were made in a vat by an alchemist.";}
 
 			int classQuirk2Result = roll (1, 6);
-			classQuirk2 = "";
-			if (classQuirk2Result == 1) {classQuirk2 += "";}
-			if (classQuirk2Result == 2) {classQuirk2 += "";}
-			if (classQuirk2Result == 3) {classQuirk2 += "";}
-			if (classQuirk2Result == 4) {classQuirk2 += "";}
-			if (classQuirk2Result == 5) {classQuirk2 += "";}
-			if (classQuirk2Result == 6) {classQuirk2 += "";}
+			classQuirk2 = "The world could not ignore the manifestation of your magic; ";
+			if (classQuirk2Result == 1) {classQuirk2 += "your powers are seen as a great blessing by those around you, and you are expected to use them in service to your community.";}
+			if (classQuirk2Result == 2) {classQuirk2 += "your powers caused destruction and even a death when they became evident, and you were treated as a criminal.";}
+			if (classQuirk2Result == 3) {classQuirk2 += "your neighbors hate and fear your power, causing them to shun you.";}
+			if (classQuirk2Result == 4) {classQuirk2 += "you came to the attention of a sinister cult that plans on exploiting your abilities.";}
+			if (classQuirk2Result == 5) {classQuirk2 += "people around you believe that your powers are a curse levied on your family for a past transgression.";}
+			if (classQuirk2Result == 6) {classQuirk2 += "your powers are believed to be tied to an ancient line of mad kings that supposedly ended in a bloody revolt over a century ago.";}
 
 			int classQuirk3Result = roll (1, 6);
-			classQuirk3 = "";
-			if (classQuirk3Result == 1) {classQuirk3 += "";}
-			if (classQuirk3Result == 2) {classQuirk3 += "";}
-			if (classQuirk3Result == 3) {classQuirk3 += "";}
-			if (classQuirk3Result == 4) {classQuirk3 += "";}
-			if (classQuirk3Result == 5) {classQuirk3 += "";}
-			if (classQuirk3Result == 6) {classQuirk3 += "";}
+			classQuirk3 = "Your body bears a curious supernatural mark: ";
+			if (classQuirk3Result == 1) {classQuirk3 += "your eyes are an unusual color, such as red.";}
+			if (classQuirk3Result == 2) {classQuirk3 += "you have an extra toe on one foot.";}
+			if (classQuirk3Result == 3) {classQuirk3 += "one of your ears is noticeably larger than the other.";}
+			if (classQuirk3Result == 4) {classQuirk3 += "your hair grows at a prodigious rate.";}
+			if (classQuirk3Result == 5) {classQuirk3 += "you wrinkle your nose repeatedly while you are chewing.";}
+			if (classQuirk3Result == 6) {classQuirk3 += "a red splotch appears on your neck once a day, then vanishes after an hour.";}
+
+			int classQuirk4Result = roll (1, 6);
+			classQuirk4 = "Your magic is always accompanied by a telltale sign of sorcery--";
+			if (classQuirk4Result == 1) {classQuirk4 += "you deliver the verbal components of your spells in the booming voice of a titan.";}
+			if (classQuirk4Result == 2) {classQuirk4 += "for a moment after you cast a spell, the area around you grows dark and gloomy.";}
+			if (classQuirk4Result == 3) {classQuirk4 += "you sweat profusely while casting a spell and for a few seconds thereafter.";}
+			if (classQuirk4Result == 4) {classQuirk4 += "your hair and garments are briefly buffeted about, as if by a breeze, whenever you call forth a spell.";}
+			if (classQuirk4Result == 5) {classQuirk4 += "if you are standing when you cast a spell, you rise six inches into the air and gently float back down.";}
+			if (classQuirk4Result == 6) {classQuirk4 += "illusory blue flames wreathe your head as you begin your casting, then abruptly disappear.";}
 		}
 
 		if (playerClass == "Warlock") {
 			int classQuirk1Result = roll (1, 6);
-			classQuirk1 = "";
-			if (classQuirk1Result == 1) {classQuirk1 += "";}
-			if (classQuirk1Result == 2) {classQuirk1 += "";}
-			if (classQuirk1Result == 3) {classQuirk1 += "";}
-			if (classQuirk1Result == 4) {classQuirk1 += "";}
-			if (classQuirk1Result == 5) {classQuirk1 += "";}
-			if (classQuirk1Result == 6) {classQuirk1 += "";}
+			classQuirk1 = "No relationship between a warlock and their patron is simple. ";
+			if (classQuirk1Result == 1) {classQuirk1 += "Your patron has guided and helped your family for generations and is kindly toward you.";}
+			if (classQuirk1Result == 2) {classQuirk1 += "Each interaction with your capricious patron is a surprise, whether pleasant or painful.";}
+			if (classQuirk1Result == 3) {classQuirk1 += "Your patron is the spirit of a long-dead hero who sees your pact as a way for it to continue to influence the world.";}
+			if (classQuirk1Result == 4) {classQuirk1 += "Your patron is a strict disciplinarian but treats you with a measure of respect.";}
+			if (classQuirk1Result == 5) {classQuirk1 += "Your patron tricked you into a pact and treats you as a slave.";}
+			if (classQuirk1Result == 6) {classQuirk1 += "You are mostly left to your own devices with no interference from your patron. Sometimes you dread the demands it will make when it does appear.";}
 
 			int classQuirk2Result = roll (1, 6);
-			classQuirk2 = "";
-			if (classQuirk2Result == 1) {classQuirk2 += "";}
-			if (classQuirk2Result == 2) {classQuirk2 += "";}
-			if (classQuirk2Result == 3) {classQuirk2 += "";}
-			if (classQuirk2Result == 4) {classQuirk2 += "";}
-			if (classQuirk2Result == 5) {classQuirk2 += "";}
-			if (classQuirk2Result == 6) {classQuirk2 += "";}
+			classQuirk2 = "Your pact carries special terms: ";
+			if (classQuirk2Result == 1) {classQuirk2 += "when directed, you must take immediate action against a specific enemy of your patron.";}
+			if (classQuirk2Result == 2) {classQuirk2 += "your pact tests your willpower; you are required to abstain from alcohol and other intoxicants.";}
+			if (classQuirk2Result == 3) {classQuirk2 += "at least once a day, you must inscribe or carve your patron’s name or symbol on the wall of a building.";}
+			if (classQuirk2Result == 4) {classQuirk2 += "you must occasionally conduct bizarre rituals to maintain your pact.";}
+			if (classQuirk2Result == 5) {classQuirk2 += "you can never wear the same outfit twice, since your patron finds such predictability to be boring.";}
+			if (classQuirk2Result == 6) {classQuirk2 += "when you use an eldritch invocation, you must speak your patron’s name aloud or risk incurring its displeasure.";}
 
 			int classQuirk3Result = roll (1, 6);
-			classQuirk3 = "";
-			if (classQuirk3Result == 1) {classQuirk3 += "";}
-			if (classQuirk3Result == 2) {classQuirk3 += "";}
-			if (classQuirk3Result == 3) {classQuirk3 += "";}
-			if (classQuirk3Result == 4) {classQuirk3 += "";}
-			if (classQuirk3Result == 5) {classQuirk3 += "";}
-			if (classQuirk3Result == 6) {classQuirk3 += "";}
+			classQuirk3 = "You bear the mark of your patron--";
+			if (classQuirk3Result == 1) {classQuirk3 += "one of your eyes looks the same as one of your patron’s eyes.";}
+			if (classQuirk3Result == 2) {classQuirk3 += "each time you wake up, the small blemish on your face appears in a different place.";}
+			if (classQuirk3Result == 3) {classQuirk3 += "you display outward symptoms of a disease but suffer no ill effects from it.";}
+			if (classQuirk3Result == 4) {classQuirk3 += "your tongue is an unnatural color.";}
+			if (classQuirk3Result == 5) {classQuirk3 += "you have a vestigial tail.";}
+			if (classQuirk3Result == 6) {classQuirk3 += "your nose glows in the dark.";}
 		}
 
 		if (playerClass == "Wizard") {
 			int classQuirk1Result = roll (1, 6);
-			classQuirk1 = "";
-			if (classQuirk1Result == 1) {classQuirk1 += "";}
-			if (classQuirk1Result == 2) {classQuirk1 += "";}
-			if (classQuirk1Result == 3) {classQuirk1 += "";}
-			if (classQuirk1Result == 4) {classQuirk1 += "";}
-			if (classQuirk1Result == 5) {classQuirk1 += "";}
-			if (classQuirk1Result == 6) {classQuirk1 += "";}
+			classQuirk1 = "Your treasured spellbook carries your personal flair--it is ";
+			if (classQuirk1Result == 1) {classQuirk1 += "a tome with pages that are thin sheets of metal, spells etched into them with acid.";}
+			if (classQuirk1Result == 2) {classQuirk1 += "long straps of leather on which spells are written, wrapped around a staff for ease of transport.";}
+			if (classQuirk1Result == 3) {classQuirk1 += "a battered tome filled with pictographs that only you can understand.";}
+			if (classQuirk1Result == 4) {classQuirk1 += "small stones inscribed with spells and kept in a cloth bag.";}
+			if (classQuirk1Result == 5) {classQuirk1 += "a scorched book, ravaged by dragon fire, with the script of your spells barely visible on its pages.";}
+			if (classQuirk1Result == 6) {classQuirk1 += "a tome full of black pages whose writing is visible only in dim light or darkness.";}
 
 			int classQuirk2Result = roll (1, 6);
-			classQuirk2 = "";
-			if (classQuirk2Result == 1) {classQuirk2 += "";}
-			if (classQuirk2Result == 2) {classQuirk2 += "";}
-			if (classQuirk2Result == 3) {classQuirk2 += "";}
-			if (classQuirk2Result == 4) {classQuirk2 += "";}
-			if (classQuirk2Result == 5) {classQuirk2 += "";}
-			if (classQuirk2Result == 6) {classQuirk2 += "";}
+			classQuirk2 = "Your magical scholarship is the means to enact your ambitions; ";
+			if (classQuirk2Result == 1) {classQuirk2 += "you will prove that the gods aren’t as powerful as folk believe.";}
+			if (classQuirk2Result == 2) {classQuirk2 += "immortality is the end goal of your studies.";}
+			if (classQuirk2Result == 3) {classQuirk2 += "if you can fully understand magic, you can unlock its use for all and usher in an era of equality.";}
+			if (classQuirk2Result == 4) {classQuirk2 += "magic is a dangerous tool. You use it to protect what you treasure.";}
+			if (classQuirk2Result == 5) {classQuirk2 += "arcane power must be taken away from those who would abuse it.";}
+			if (classQuirk2Result == 6) {classQuirk2 += "you will become the greatest wizard the world has seen in generations.";}
 
 			int classQuirk3Result = roll (1, 6);
-			classQuirk3 = "";
-			if (classQuirk3Result == 1) {classQuirk3 += "";}
-			if (classQuirk3Result == 2) {classQuirk3 += "";}
-			if (classQuirk3Result == 3) {classQuirk3 += "";}
-			if (classQuirk3Result == 4) {classQuirk3 += "";}
-			if (classQuirk3Result == 5) {classQuirk3 += "";}
-			if (classQuirk3Result == 6) {classQuirk3 += "";}
+			classQuirk3 = "Endless hours of research have taken somewhat of a toll on your social skills; ";
+			if (classQuirk3Result == 1) {classQuirk3 += "you have the habit of tapping your foot incessantly, which often annoys those around you.";}
+			if (classQuirk3Result == 2) {classQuirk3 += "your memory is quite good, but you have no trouble pretending to be absentminded when it suits your purposes.";}
+			if (classQuirk3Result == 3) {classQuirk3 += "you never enter a room without looking to see what’s hanging from the ceiling.";}
+			if (classQuirk3Result == 4) {classQuirk3 += "your most prized possession is a dead worm that you keep inside a potion vial.";}
+			if (classQuirk3Result == 5) {classQuirk3 += "when you want people to leave you alone, you start talking to yourself. That usually does the trick.";}
+			if (classQuirk3Result == 6) {classQuirk3 += "your fashion sense and grooming, or more accurately lack thereof, sometimes cause others to assume you are a beggar.";}
 		}
 
-		string output = classQuirk1 + " " + classQuirk2 + " " + classQuirk3;
+		string output = classQuirk1 + " " + classQuirk2 + " " + classQuirk3 + " " + classQuirk4;
 		return output;
 	}
 
 	string RollBackground () {
 		int backgroundResult = roll (1, 13);
+
 		if (backgroundResult == 1) {playerBackground = "Acolyte";}
 		if (playerBackground == "Acolyte") {playerBackgroundSpecial = null;}
 
@@ -1063,48 +1090,48 @@ public class CharGen : MonoBehaviour {
 			if (playerRace == "Half-elf") {
 				int mixedAncestryResultsHalfElf = roll (1, 8);
 				if (mixedAncestryResultsHalfElf <= 5) {
-					mixedAncestry = "One parent was an elf and the other was a human.";
+					mixedAncestry = "One parent was an elf and the other was a human. ";
 				}
 				if (mixedAncestryResultsHalfElf == 6) {
-					mixedAncestry = "One parent was an elf and the other was a half-elf.";
+					mixedAncestry = "One parent was an elf and the other was a half-elf. ";
 				}
 				if (mixedAncestryResultsHalfElf == 7) {
-					mixedAncestry = "One parent was a human and the other was a half-elf.";
+					mixedAncestry = "One parent was a human and the other was a half-elf. ";
 				}
 				if (mixedAncestryResultsHalfElf == 8) {
-					mixedAncestry = "Both parents were half-elves.";
+					mixedAncestry = "Both parents were half-elves. ";
 				}
 			}
 
 			if (playerRace == "Half-orc") {
 				int mixedAncestryResultsHalfOrc = roll (1, 8);
 				if (mixedAncestryResultsHalfOrc <= 3) {
-					mixedAncestry = "One parent was an orc and the other was a human.";
+					mixedAncestry = "One parent was an orc and the other was a human. ";
 				}
 				if (mixedAncestryResultsHalfOrc >= 4 && mixedAncestryResultsHalfOrc <= 5) {
-					mixedAncestry = "One parent was an orc and the other was a half-orc.";
+					mixedAncestry = "One parent was an orc and the other was a half-orc. ";
 				}
 				if (mixedAncestryResultsHalfOrc >= 6 && mixedAncestryResultsHalfOrc <= 7) {
-					mixedAncestry = "One parent was a human and the other was a half-orc.";
+					mixedAncestry = "One parent was a human and the other was a half-orc. ";
 				}
 				if (mixedAncestryResultsHalfOrc == 8) {
-					mixedAncestry = "Both parents were half-orcs.";
+					mixedAncestry = "Both parents were half-orcs. ";
 				}
 			}
 
 			if (playerRace == "Tiefling") {
 				int mixedAncestryResultsTiefling = roll (1, 8);
 				if (mixedAncestryResultsTiefling <= 4) {
-					mixedAncestry = "Both parents were humans, their infernal heritage dormant until you came along.";
+					mixedAncestry = "Both parents were humans, their infernal heritage dormant until you came along. ";
 				}
 				if (mixedAncestryResultsTiefling >= 5 && mixedAncestryResultsTiefling <= 6) {
-					mixedAncestry = "One parent was a tiefling and the other was a human.";
+					mixedAncestry = "One parent was a tiefling and the other was a human. ";
 				}
 				if (mixedAncestryResultsTiefling == 7) {
-					mixedAncestry = "One parent was a tiefling and the other was a devil.";
+					mixedAncestry = "One parent was a tiefling and the other was a devil. ";
 				}
 				if (mixedAncestryResultsTiefling == 8) {
-					mixedAncestry = "One parent was a human and the other was a devil.";
+					mixedAncestry = "One parent was a human and the other was a devil. ";
 				}
 			}
 
@@ -1439,7 +1466,7 @@ public class CharGen : MonoBehaviour {
 		if (lifeEventResult >= 41 && lifeEventResult <= 50) {lifeEventText = "You made a friend of an adventurer. Your friend is a " + RollAlignment() + " " + RollGender() + " " + RollRace() + " " + RollNPCClass() + ". Work with your DM to establish how your friendship began.\n";}
 		if (lifeEventResult >= 51 && lifeEventResult <= 70) {lifeEventText = "You spent time working in a job related to your background. Start the game with an extra " + roll(2,6) + " gp.\n";}
 		if (lifeEventResult >= 71 && lifeEventResult <= 75) {lifeEventText = "You met someone important. They are a " + RollAlignment() + " " + RollGender() + " " + RollRace() + " " + RollOccupation() + " and feel " + RollRelationship() + " toward you. Work out additional details with your DM as needed to fit this character into your backstory.\n";}
-		if (lifeEventResult >= 76 && lifeEventResult <= 80) {lifeEventText = "You went on an adventure: " + RollAdventure() + "\n";}
+		if (lifeEventResult >= 76 && lifeEventResult <= 80) {lifeEventText = "You went on an adventure: " + RollAdventure();}
 		if (lifeEventResult >= 81 && lifeEventResult <= 85) {lifeEventText = "You had a supernatural experience: " + RollSupernaturalEvents() + "\n";}
 		if (lifeEventResult >= 86 && lifeEventResult <= 90) {lifeEventText = "You fought in a battle. " + RollWar() + "\n";}
 		if (lifeEventResult >= 91 && lifeEventResult <= 95) {lifeEventText = "You committed " + RollCrime() + " or were wrongly accused of doing so. " + RollPunishment() + "\n";}
@@ -1470,7 +1497,6 @@ public class CharGen : MonoBehaviour {
 	}
 
 	//all the life event sub-tables follow this comment
-
 
 	string RollAdventure ()
 	{
