@@ -15,7 +15,12 @@ public class CharGen : MonoBehaviour {
 	public string playerSubclass = "testsubclass";
 	public int childhoodMemoriesModifier = 0;
 	public string playerBackground = "testbackground";
+	public int playerBackgroundSpecialResult;
 	public string playerBackgroundSpecial = null;
+	public string playerPersonality; 
+	public string playerIdeal;
+	public string playerBond;
+	public string playerFlaw;
 
 	public string classQuirk1; 
 	public string classQuirk2; 
@@ -114,7 +119,10 @@ public class CharGen : MonoBehaviour {
 			displayText.text += "You are a " + playerGender + " " + playerRace + " " + playerClass + playerSubclass + "! You are " + playerAge + " years old (or proportional non-human equivalent).\n" + 
 				"Prior to adventuring, your were a(n): " + playerBackground + ".\n";
 
-			displayText.text += "Personality " + roll (1, 8) + ", Ideal " + roll (1, 6) + ", Bond " + roll (1, 6) + ", Flaw " + roll (1, 6) + ". " + playerBackgroundSpecial + "\n\n";
+			displayText.text += "Personality: " + playerPersonality + "\n";
+			displayText.text += "Ideal: " + playerIdeal + "\n";
+			displayText.text += "Flaw: " + playerFlaw + "\n";
+			displayText.text += playerBackgroundSpecial + "\n\n";
 
 			displayText.text += playerParentPresence + " " + mixedAncestry + playerMotherDetails + " " + playerFatherDetails + "\n\n";
 
@@ -879,13 +887,55 @@ public class CharGen : MonoBehaviour {
 	}
 
 	string RollBackground () {
+
 		int backgroundResult = roll (1, 13);
+
+		int playerPersonalityResult = roll(1,8); 
+		int playerIdealResult = roll(1,6); 
+		int playerBondResult = roll(1,6); 
+		int playerFlawResult = roll(1,6); 
 
 		if (backgroundResult == 1) {playerBackground = "Acolyte";}
 		if (playerBackground == "Acolyte") {playerBackgroundSpecial = null;}
 
+		if (playerPersonalityResult == 1 && playerBackground == "Acolyte") {playerPersonality = "You idolize a particular hero of my faith, and constantly refer to that person's deeds and example.";}
+		if (playerPersonalityResult == 2 && playerBackground == "Acolyte") {playerPersonality = "You can find common ground between the fiercest enemies, empathizing wilh them and always working toward peace.";}
+		if (playerPersonalityResult == 3 && playerBackground == "Acolyte") {playerPersonality = "You see omens in every event and action. The gods try to speak to us, we just need lo listen.";}
+		if (playerPersonalityResult == 4 && playerBackground == "Acolyte") {playerPersonality = "Nothing can shake my optimistic attitude.";}
+		if (playerPersonalityResult == 5 && playerBackground == "Acolyte") {playerPersonality = "I quote (or misquote) sacred texts and proverbs in almost every situation.";}
+		if (playerPersonalityResult == 6 && playerBackground == "Acolyte") {playerPersonality = "I am tolerant (or intolerant) of other faiths and respect (or condemn) the worship of other gods.";}
+		if (playerPersonalityResult == 7 && playerBackground == "Acolyte") {playerPersonality = "I've enjoyed fine food, drink, and high society among my temple's elite. Rough living grates on me.";}
+		if (playerPersonalityResult == 8 && playerBackground == "Acolyte") {playerPersonality = "I've spent so long in the temple that I have liltle practical experience dealing with people in the outside world.";}
+
+		if (playerIdealResult == 1 && playerBackground == "Acolyte") {playerIdeal = "Tradition. The ancient traditions of worship and sacrifice must be preserved and upheld. (Lawful)";}
+		if (playerIdealResult == 2 && playerBackground == "Acolyte") {playerIdeal = "Charity. You always try to help those in need, no matter what the personal cost. (Good)";}
+		if (playerIdealResult == 3 && playerBackground == "Acolyte") {playerIdeal = "Change. We must help bring about the changes the gods are constantly working in the world. (Chaotic)";}
+		if (playerIdealResult == 4 && playerBackground == "Acolyte") {playerIdeal = "Power. You hope to one day rise to the top of your faith's religious hierarchy. (Lawful)";}
+		if (playerIdealResult == 5 && playerBackground == "Acolyte") {playerIdeal = "Faith. You trust that your deity will guide your actions. You have faith that if you work hard, things will go well. (Lawful)";}
+		if (playerIdealResult == 6 && playerBackground == "Acolyte") {playerIdeal = "Aspiration. You seek to prove yourself worthy of your god's favor by matching your actions against his or her teachings. (Any)";}
+
+		if (playerBondResult == 1 && playerBackground == "Acolyte") {playerBond = "You would die to recover an ancient relic of your faith that was lost long ago.";}
+		if (playerBondResult == 2 && playerBackground == "Acolyte") {playerBond = "You will someday get revenge on the corrupt temple hierarchy who branded you a heretic.";}
+		if (playerBondResult == 3 && playerBackground == "Acolyte") {playerBond = "You owe your life to the priest who took you in when your parents died.";}
+		if (playerBondResult == 4 && playerBackground == "Acolyte") {playerBond = "Everything you do is for the common people.";}
+		if (playerBondResult == 5 && playerBackground == "Acolyte") {playerBond = "You will do anything to protect the temple where you served.";}
+		if (playerBondResult == 6 && playerBackground == "Acolyte") {playerBond = "You seek to preserve a sacred text that your enemies consider heretical and seek to destroy.";}
+
+		if (playerFlawResult == 1 && playerBackground == "Acolyte") {playerFlaw = "You judge others harshly, and yourself even more severely. ";}
+		if (playerFlawResult == 2 && playerBackground == "Acolyte") {playerFlaw = "You put too much trust in those who wield power within your temple's hierarchy.";}
+		if (playerFlawResult == 3 && playerBackground == "Acolyte") {playerFlaw = "Your piety sometimes leads you to blindly trust those that profess faith in your god.";}
+		if (playerFlawResult == 4 && playerBackground == "Acolyte") {playerFlaw = "You are inflexible in your thinking.";}
+		if (playerFlawResult == 5 && playerBackground == "Acolyte") {playerFlaw = "You are suspicious of strangers and expect the worst of them.";}
+		if (playerFlawResult == 6 && playerBackground == "Acolyte") {playerFlaw = "Once you pick a goal, you become obsessed with it to the detriment of everything else in your life.";}
+
 		if (backgroundResult == 2) {playerBackground = "Charlatan";}
-		if (playerBackground == "Charlatan") {playerBackgroundSpecial = "Favorite Scheme: " + roll(1,6);}
+		if (playerBackground == "Charlatan") {playerBackgroundSpecialResult = roll(1,6); playerBackgroundSpecial = "Favorite Scheme: ";}
+		if (playerBackgroundSpecialResult == 1 && playerBackground == "Charlatan") {playerBackgroundSpecial += "You cheat at games of chance.";}
+		if (playerBackgroundSpecialResult == 2 && playerBackground == "Charlatan") {playerBackgroundSpecial += "You shave coins or forge documents.";}
+		if (playerBackgroundSpecialResult == 3 && playerBackground == "Charlatan") {playerBackgroundSpecial += "You insinuate yourself into people's lives to prey on their weakness and secure their fortunes.";}
+		if (playerBackgroundSpecialResult == 4 && playerBackground == "Charlatan") {playerBackgroundSpecial += "You put on new identities like clothes.";}
+		if (playerBackgroundSpecialResult == 5 && playerBackground == "Charlatan") {playerBackgroundSpecial += "You run sleight-of-hand cons on street corners.";}
+		if (playerBackgroundSpecialResult == 6 && playerBackground == "Charlatan") {playerBackgroundSpecial += "You convince people that worthless junk is worth their hard-earned money.";}
 
 		if (backgroundResult == 3 && flip == 1) {playerBackground = "Spy";}
 		if (backgroundResult == 3 && flip == 2) {playerBackground = "Criminal";}
