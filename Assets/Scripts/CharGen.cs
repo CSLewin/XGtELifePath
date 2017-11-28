@@ -301,24 +301,27 @@ public class CharGen : MonoBehaviour {
 
 		if (raceResult >= 38 && raceResult <= 47) {playerRace = "Dwarf";}
 		if (playerRace == "Dwarf") 
-		{int subrace = roll (1, 2);
+		{int subrace = roll (1, 3);
 			if (subrace == 1) {playerRace = "Hill Dwarf";}
 			if (subrace == 2) {playerRace = "Mountain Dwarf";}
+			if (subrace == 3) {playerRace = "Gray Dwarf";}
 		}
 
 		if (raceResult >= 48 && raceResult <= 57) {playerRace = "Elf";}
 		if (playerRace == "Elf") 
-		{int subrace = roll (1, 3);
+		{int subrace = roll (1, 4);
 			if (subrace == 1) {playerRace = "High Elf";}
 			if (subrace == 2) {playerRace = "Wood Elf";}
 			if (subrace == 3) {playerRace = "Dark Elf"; childhoodMemoriesModifier += 1;}
+			if (subrace == 4) {playerRace = "Eladrin";}
 		}
 
 		if (raceResult >= 58 && raceResult <= 67) {playerRace = "Halfling";}
 		if (playerRace == "Halfling") 
-		{int subrace = roll (1, 2);
+		{int subrace = roll (1, 3);
 			if (subrace == 1) {playerRace = "Lightfoot Halfling"; childhoodMemoriesModifier += 1;}
 			if (subrace == 2) {playerRace = "Stout Halfling";}
+			if (subrace == 3) {playerRace = "Ghostwise Halfling";}
 		}
 
 		if (raceResult >= 68 && raceResult <= 72) {playerRace = "Dragonborn"; childhoodMemoriesModifier += 1;}
@@ -344,10 +347,26 @@ public class CharGen : MonoBehaviour {
 		}
 
 		if (raceResult >= 78 && raceResult <= 82) {playerRace = "Half-elf"; childhoodMemoriesModifier += 1;}
+		if (playerRace == "Half-elf") 
+		{int subrace = roll (1, 5);
+			if (subrace == 1) {playerRace = "Half-elf";}
+			if (subrace == 2) {playerRace = "Half-Wood elf";}
+			if (subrace == 3) {playerRace = "Half-Sun/Moon elf";}
+			if (subrace == 4) {playerRace = "Half-Dark elf";}
+			if (subrace == 5) {playerRace = "Half-Aquatic elf";}
+		}
 
 		if (raceResult >= 83 && raceResult <= 87) {playerRace = "Half-orc";}
 
 		if (raceResult >= 88 && raceResult <= 92) {playerRace = "Tiefling"; childhoodMemoriesModifier += 1;}
+		if (playerRace == "Tiefling") 
+		{int subrace = roll (1, 5);
+			if (subrace == 1) {playerRace = "Tiefling";}
+			if (subrace == 2) {playerRace = "Feral Tiefling";}
+			if (subrace == 3) {playerRace = "Devil's Tongue Tiefling";}
+			if (subrace == 4) {playerRace = "Winged Tiefling";}
+			if (subrace == 5) {playerRace = "Hellfire Tiefling";}
+		}
 
 		if (raceResult == 93) {playerRace = "Aasimar"; childhoodMemoriesModifier += 1;}
 		if (playerRace == "Aasimar") 
@@ -379,12 +398,13 @@ public class CharGen : MonoBehaviour {
 		int classResult = roll (1, 12);
 		if (classResult == 1) {playerClass = "Barbarian";}
 		if (playerClass == "Barbarian") 
-		{int subclass = roll (1, 5);
+		{int subclass = roll (1, 6);
 			if (subclass == 1) {playerSubclass = " (Path of the Berserker)";}
 			if (subclass == 2) {playerSubclass = " (Path of the Totem Warrior)";}
 			if (subclass == 3) {playerSubclass = " (Path of the Ancestral Guardian)";}
 			if (subclass == 4) {playerSubclass = " (Path of the Storm Herald)";}
 			if (subclass == 5) {playerSubclass = " (Path of the Zealot)";}
+			if (subclass == 6) {playerSubclass = " (Path of the Battlerager)";}
 		}
 
 		if (classResult == 2) {playerClass = "Bard"; childhoodMemoriesModifier += 2;}
@@ -399,7 +419,7 @@ public class CharGen : MonoBehaviour {
 
 		if (classResult == 3) {playerClass = "Cleric";}
 		if (playerClass == "Cleric") 
-		{int subclass = roll (1, 9);
+		{int subclass = roll (1, 11);
 			if (subclass == 1) {playerSubclass = " (Knowledge Domain)";}
 			if (subclass == 2) {playerSubclass = " (Life Domain)";}
 			if (subclass == 3) {playerSubclass = " (Light Domain)";}
@@ -409,6 +429,8 @@ public class CharGen : MonoBehaviour {
 			if (subclass == 7) {playerSubclass = " (War Domain)";}
 			if (subclass == 8) {playerSubclass = " (Forge Domain)";}
 			if (subclass == 9) {playerSubclass = " (Grave Domain)";}
+			if (subclass == 10) {playerSubclass = " (Death Domain)";}
+			if (subclass == 11) {playerSubclass = " (Arcana Domain)";}
 		}
 
 		if (classResult == 4) {playerClass = "Druid";}
@@ -422,43 +444,47 @@ public class CharGen : MonoBehaviour {
 
 		if (classResult == 5) {playerClass = "Fighter";}
 		if (playerClass == "Fighter") 
-		{int subclass = roll (1, 6);
+		{int subclass = roll (1, 7);
 			if (subclass == 1) {playerSubclass = " (Champion)";}
 			if (subclass == 2) {playerSubclass = " (Battle Master)";}
 			if (subclass == 3) {playerSubclass = " (Eldritch Knight)";}
 			if (subclass == 4) {playerSubclass = " (Arcane Archer)";}
 			if (subclass == 5) {playerSubclass = " (Cavalier)";}
 			if (subclass == 6) {playerSubclass = " (Samurai)";}
+			if (subclass == 7) {playerSubclass = " (Purple Dragon Knight)";}
 		}
 
 		if (classResult == 6) {playerClass = "Monk";}
 		if (playerClass == "Monk") 
-		{int subclass = roll (1, 6);
+		{int subclass = roll (1, 7);
 			if (subclass == 1) {playerSubclass = " (Way of the Open Hand)";}
 			if (subclass == 2) {playerSubclass = " (Way of Shadow)";}
 			if (subclass == 3) {playerSubclass = " (Way of the Four Elements)";}
 			if (subclass == 4) {playerSubclass = " (Way of the Drunken Master)";}
 			if (subclass == 5) {playerSubclass = " (Way of the Kensei)";}
 			if (subclass == 6) {playerSubclass = " (Way of the Sun Soul)";}
+			if (subclass == 7) {playerSubclass = " (Way of the Long Death)";}
 		}
 
 		if (classResult == 7) {playerClass = "Paladin"; childhoodMemoriesModifier += 2;}
 		if (playerClass == "Paladin") 
-		{int subclass = roll (1, 5);
+		{int subclass = roll (1, 6);
 			if (subclass == 1) {playerSubclass = " (Oath of Devotion)";}
 			if (subclass == 2) {playerSubclass = " (Oath of the Ancients)";}
 			if (subclass == 3) {playerSubclass = " (Oath of Vengeance)";}
 			if (subclass == 4) {playerSubclass = " (Oath of Conquest)";}
 			if (subclass == 5) {playerSubclass = " (Oath of Redemption)";}
+			if (subclass == 6) {playerSubclass = " (Oath of the Crown)";}
 		}
 
 		if (classResult == 8) {playerClass = "Ranger";}
 		if (playerClass == "Ranger") 
-		{int subclass = roll (1, 4);
+		{int subclass = roll (1, 5);
 			if (subclass == 1) {playerSubclass = " (Hunter)";}
-			if (subclass == 2) {playerSubclass = " (Gloom Stalker)";}
-			if (subclass == 3) {playerSubclass = " (Horizon Walker)";}
-			if (subclass == 4) {playerSubclass = " (Monster Slayer)";}
+			if (subclass == 2) {playerSubclass = " (Beast Master)";}
+			if (subclass == 3) {playerSubclass = " (Gloom Stalker)";}
+			if (subclass == 4) {playerSubclass = " (Horizon Walker)";}
+			if (subclass == 5) {playerSubclass = " (Monster Slayer)";}
 		}
 
 		if (classResult == 9) {playerClass = "Rogue";}
@@ -485,17 +511,18 @@ public class CharGen : MonoBehaviour {
 
 		if (classResult == 11) {playerClass = "Warlock"; childhoodMemoriesModifier += 2;}
 		if (playerClass == "Warlock") 
-		{int subclass = roll (1, 5);
+		{int subclass = roll (1, 6);
 			if (subclass == 1) {playerSubclass = " (Archfey Patron)";}
 			if (subclass == 2) {playerSubclass = " (Fiend Patron)";}
 			if (subclass == 3) {playerSubclass = " (Great Old One Patron)";}
 			if (subclass == 4) {playerSubclass = " (Celestial Patron)";}
 			if (subclass == 5) {playerSubclass = " (Hexblade Patron)";}
+			if (subclass == 6) {playerSubclass = " (Undying Patron)";}
 		}
 
 		if (classResult == 12) {playerClass = "Wizard";}
 		if (playerClass == "Wizard") 
-		{int subclass = roll (1, 9);
+		{int subclass = roll (1, 10);
 			if (subclass == 1) {playerSubclass = " (School of Abjuration)";}
 			if (subclass == 2) {playerSubclass = " (School of Conjuration)";}
 			if (subclass == 3) {playerSubclass = " (School of Divination)";}
@@ -505,6 +532,7 @@ public class CharGen : MonoBehaviour {
 			if (subclass == 7) {playerSubclass = " (School of Necromancy)";}
 			if (subclass == 8) {playerSubclass = " (School of Transmutation)";}
 			if (subclass == 9) {playerSubclass = " (War Magic)";}
+			if (subclass == 10) {playerSubclass = " (Bladesinging)";}
 		}
 		return playerClass;
 	}
@@ -971,16 +999,16 @@ public class CharGen : MonoBehaviour {
 
 		if (backgroundResult == 3 && flip == 1) {playerBackground = "Spy";}
 		if (backgroundResult == 3 && flip == 2) {playerBackground = "Criminal";}
-		if (playerBackground == "Criminal" || playerBackground == "Spy") {playerBackgroundSpecialResult = roll(1,8); playerBackgroundSpecial = "Criminal Specialty: ";}
+		if (playerBackground == "Criminal") {playerBackgroundSpecialResult = roll(1,8); playerBackgroundSpecial = "Criminal Specialty: ";}
 
-		if (playerBackgroundSpecialResult == 1 && playerBackground == "Criminal" || playerBackgroundSpecialResult == 1 && playerBackground == "Spy") {playerBackgroundSpecial += "Blackmailer";}
-		if (playerBackgroundSpecialResult == 2 && playerBackground == "Criminal" || playerBackgroundSpecialResult == 2 && playerBackground == "Spy") {playerBackgroundSpecial += "Burglar";}
-		if (playerBackgroundSpecialResult == 3 && playerBackground == "Criminal" || playerBackgroundSpecialResult == 3 && playerBackground == "Spy") {playerBackgroundSpecial += "Enforcer";}
-		if (playerBackgroundSpecialResult == 4 && playerBackground == "Criminal" || playerBackgroundSpecialResult == 4 && playerBackground == "Spy") {playerBackgroundSpecial += "Fence";}
-		if (playerBackgroundSpecialResult == 5 && playerBackground == "Criminal" || playerBackgroundSpecialResult == 5 && playerBackground == "Spy") {playerBackgroundSpecial += "Highway robber";}
-		if (playerBackgroundSpecialResult == 6 && playerBackground == "Criminal" || playerBackgroundSpecialResult == 6 && playerBackground == "Spy") {playerBackgroundSpecial += "Hired killer";}
-		if (playerBackgroundSpecialResult == 7 && playerBackground == "Criminal" || playerBackgroundSpecialResult == 7 && playerBackground == "Spy") {playerBackgroundSpecial += "Pickpocket";}
-		if (playerBackgroundSpecialResult == 8 && playerBackground == "Criminal" || playerBackgroundSpecialResult == 8 && playerBackground == "Spy") {playerBackgroundSpecial += "Smuggler";}
+		if (playerBackgroundSpecialResult == 1 && playerBackground == "Criminal") {playerBackgroundSpecial += "Blackmailer";}
+		if (playerBackgroundSpecialResult == 2 && playerBackground == "Criminal") {playerBackgroundSpecial += "Burglar";}
+		if (playerBackgroundSpecialResult == 3 && playerBackground == "Criminal") {playerBackgroundSpecial += "Enforcer";}
+		if (playerBackgroundSpecialResult == 4 && playerBackground == "Criminal") {playerBackgroundSpecial += "Fence";}
+		if (playerBackgroundSpecialResult == 5 && playerBackground == "Criminal") {playerBackgroundSpecial += "Highway robber";}
+		if (playerBackgroundSpecialResult == 6 && playerBackground == "Criminal") {playerBackgroundSpecial += "Hired killer";}
+		if (playerBackgroundSpecialResult == 7 && playerBackground == "Criminal") {playerBackgroundSpecial += "Pickpocket";}
+		if (playerBackgroundSpecialResult == 8 && playerBackground == "Criminal") {playerBackgroundSpecial += "Smuggler";}
 
 		if (playerPersonalityResult == 1 && playerBackground == "Criminal" || playerPersonalityResult == 1 && playerBackground == "Spy") {playerPersonality = "You always have a plan for what to do when things go wrong.";}
 		if (playerPersonalityResult == 2 && playerBackground == "Criminal" || playerPersonalityResult == 2 && playerBackground == "Spy") {playerPersonality = "You are always calm, no matter the situation. You never raise your voice or let your emotions control you.";}
@@ -1012,13 +1040,94 @@ public class CharGen : MonoBehaviour {
 		if (playerFlawResult == 5 && playerBackground == "Criminal" || playerFlawResult == 5 && playerBackground == "Spy") {playerFlaw = "You turn tail and run when things look bad.";}
 		if (playerFlawResult == 6 && playerBackground == "Criminal" || playerFlawResult == 6 && playerBackground == "Spy") {playerFlaw = "An innocent person is in prison for a crime that you committed. You're okay with that.";}
 
-
 		if (backgroundResult == 4 && flip == 1) {playerBackground = "Entertainer";}
 		if (backgroundResult == 4 && flip == 2) {playerBackground = "Gladiator";}
-		if (playerBackground == "Entertainer") {playerBackgroundSpecial = "Entertainer Routine: " + roll(1,8);}
+		if (playerBackground == "Entertainer") {playerBackgroundSpecialResult = roll(1,10); playerBackgroundSpecial = "Entertainer Routine: ";}
+
+		if (playerBackgroundSpecialResult == 1 && playerBackground == "Entertainer") {playerBackgroundSpecial += "Actor";}
+		if (playerBackgroundSpecialResult == 2 && playerBackground == "Entertainer") {playerBackgroundSpecial += "Dancer";}
+		if (playerBackgroundSpecialResult == 3 && playerBackground == "Entertainer") {playerBackgroundSpecial += "Fire-eater";}
+		if (playerBackgroundSpecialResult == 4 && playerBackground == "Entertainer") {playerBackgroundSpecial += "Jester";}
+		if (playerBackgroundSpecialResult == 5 && playerBackground == "Entertainer") {playerBackgroundSpecial += "Juggler";}
+		if (playerBackgroundSpecialResult == 6 && playerBackground == "Entertainer") {playerBackgroundSpecial += "Instrumentalist";}
+		if (playerBackgroundSpecialResult == 7 && playerBackground == "Entertainer") {playerBackgroundSpecial += "Poet";}
+		if (playerBackgroundSpecialResult == 8 && playerBackground == "Entertainer") {playerBackgroundSpecial += "Singer";}
+		if (playerBackgroundSpecialResult == 9 && playerBackground == "Entertainer") {playerBackgroundSpecial += "Storyteller";}
+		if (playerBackgroundSpecialResult == 10 && playerBackground == "Entertainer") {playerBackgroundSpecial += "Tumbler";}
+
+		if (playerPersonalityResult == 1 && playerBackground == "Entertainer" || playerPersonalityResult == 1 && playerBackground == "Gladiator") {playerPersonality = "You know a story relevant to almost every situation.";}
+		if (playerPersonalityResult == 2 && playerBackground == "Entertainer" || playerPersonalityResult == 2 && playerBackground == "Gladiator") {playerPersonality = "Whenever I come to a new place, you collect local rumors and spread gossip.";}
+		if (playerPersonalityResult == 3 && playerBackground == "Entertainer" || playerPersonalityResult == 3 && playerBackground == "Gladiator") {playerPersonality = "You're a hopeless romantic, always searching for that 'special someone.'";}
+		if (playerPersonalityResult == 4 && playerBackground == "Entertainer" || playerPersonalityResult == 4 && playerBackground == "Gladiator") {playerPersonality = "Nobody stays angry at you or around you for long, since you can defuse any amount of tension.";}
+		if (playerPersonalityResult == 5 && playerBackground == "Entertainer" || playerPersonalityResult == 5 && playerBackground == "Gladiator") {playerPersonality = "You love a good insult, even one directed at you.";}
+		if (playerPersonalityResult == 6 && playerBackground == "Entertainer" || playerPersonalityResult == 6 && playerBackground == "Gladiator") {playerPersonality = "You get bitter if you're not the center of attention.";}
+		if (playerPersonalityResult == 7 && playerBackground == "Entertainer" || playerPersonalityResult == 7 && playerBackground == "Gladiator") {playerPersonality = "You'll settle for nothing less than perfection.";}
+		if (playerPersonalityResult == 8 && playerBackground == "Entertainer" || playerPersonalityResult == 8 && playerBackground == "Gladiator") {playerPersonality = "You change your mood or your mind as quickly as you change key in a song.";}
+
+		if (playerIdealResult == 1 && playerBackground == "Entertainer" || playerIdealResult == 1 && playerBackground == "Gladiator") {playerIdeal = "Beauty. When you perform, you make the world better than it was. (Good)";}
+		if (playerIdealResult == 2 && playerBackground == "Entertainer" || playerIdealResult == 2 && playerBackground == "Gladiator") {playerIdeal = "Tradition. The stories, legends, and songs of the past must never be forgotten, for they teach us who we are. (Lawful)";}
+		if (playerIdealResult == 3 && playerBackground == "Entertainer" || playerIdealResult == 3 && playerBackground == "Gladiator") {playerIdeal = "Creativity. The world is in need of new ideas and bold action. (Chaotic)";}
+		if (playerIdealResult == 4 && playerBackground == "Entertainer" || playerIdealResult == 4 && playerBackground == "Gladiator") {playerIdeal = "Greed. You're only in it for the money and fame. (Evil)";}
+		if (playerIdealResult == 5 && playerBackground == "Entertainer" || playerIdealResult == 5 && playerBackground == "Gladiator") {playerIdeal = "People. You like seeing the smiles on people's faces when you perform. That's all that matters. (Neutral)";}
+		if (playerIdealResult == 6 && playerBackground == "Entertainer" || playerIdealResult == 6 && playerBackground == "Gladiator") {playerIdeal = "Honesty. Art should reflect the soul; it should come from within and reveal who we really are. (Any)";}
+
+		if (playerBondResult == 1 && playerBackground == "Entertainer" || playerBondResult == 1 && playerBackground == "Gladiator" ) {playerBond = "Your instrument is your most treasured possession, and it reminds you of someone you love.";}
+		if (playerBondResult == 2 && playerBackground == "Entertainer" || playerBondResult == 2 && playerBackground == "Gladiator" ) {playerBond = "Someone stole your precious instrument, and someday you'll get it back.";}
+		if (playerBondResult == 3 && playerBackground == "Entertainer" || playerBondResult == 3 && playerBackground == "Gladiator" ) {playerBond = "You want to be famous, whatever it takes.";}
+		if (playerBondResult == 4 && playerBackground == "Entertainer" || playerBondResult == 4 && playerBackground == "Gladiator" ) {playerBond = "You idolize a hero of the old tales and measure your deeds against that person's.";}
+		if (playerBondResult == 5 && playerBackground == "Entertainer" || playerBondResult == 5 && playerBackground == "Gladiator" ) {playerBond = "You will do anything to prove yourself superior to your hated rival.";}
+		if (playerBondResult == 6 && playerBackground == "Entertainer" || playerBondResult == 6 && playerBackground == "Gladiator" ) {playerBond = "You would do anything for the other members of your old troupe.";}
+
+		if (playerFlawResult == 1 && playerBackground == "Entertainer" || playerFlawResult == 1 && playerBackground == "Gladiator") {playerFlaw = "You'll do anything to win fame and renown.";}
+		if (playerFlawResult == 2 && playerBackground == "Entertainer" || playerFlawResult == 2 && playerBackground == "Gladiator") {playerFlaw = "You're a sucker for a pretty face.";}
+		if (playerFlawResult == 3 && playerBackground == "Entertainer" || playerFlawResult == 3 && playerBackground == "Gladiator") {playerFlaw = "A scandal prevents you from ever going home again. That kind of trouble seems to follow you around.";}
+		if (playerFlawResult == 4 && playerBackground == "Entertainer" || playerFlawResult == 4 && playerBackground == "Gladiator") {playerFlaw = "You once satirized a noble who still wants your head. It was a mistake that you will likely repeat.";}
+		if (playerFlawResult == 5 && playerBackground == "Entertainer" || playerFlawResult == 5 && playerBackground == "Gladiator") {playerFlaw = "You have trouble keeping your true feelings hidden. Your sharp tongue lands you in trouble.";}
+		if (playerFlawResult == 6 && playerBackground == "Entertainer" || playerFlawResult == 6 && playerBackground == "Gladiator") {playerFlaw = "Despite your best efforts, you are unreliable to your friends.";}
 
 		if (backgroundResult == 5) {playerBackground = "Folk Hero";}
-		if (playerBackground == "Folk Hero") {playerBackgroundSpecial = "Defining Event: " + roll(1,10);}
+		if (playerBackground == "Folk Hero") {playerBackgroundSpecialResult = roll(1,10); playerBackgroundSpecial = "Defining Event: ";}
+
+		if (playerBackgroundSpecialResult == 1 && playerBackground == "Folk Hero") {playerBackgroundSpecial += "You stood up to a tyrant's agents.";}
+		if (playerBackgroundSpecialResult == 2 && playerBackground == "Folk Hero") {playerBackgroundSpecial += "You saved people during a natural disaster.";}
+		if (playerBackgroundSpecialResult == 3 && playerBackground == "Folk Hero") {playerBackgroundSpecial += "You stood alone against a terrible monster.";}
+		if (playerBackgroundSpecialResult == 4 && playerBackground == "Folk Hero") {playerBackgroundSpecial += "You stole from a corrupt merchant to help the poor.";}
+		if (playerBackgroundSpecialResult == 5 && playerBackground == "Folk Hero") {playerBackgroundSpecial += "You led a militia to fight off an invading army.";}
+		if (playerBackgroundSpecialResult == 6 && playerBackground == "Folk Hero") {playerBackgroundSpecial += "You broke into a tyrant's castle and stole weapons to arm the people.";}
+		if (playerBackgroundSpecialResult == 7 && playerBackground == "Folk Hero") {playerBackgroundSpecial += "You trained the peasantry to use farm implements as weapons against a tyrant's soldiers.";}
+		if (playerBackgroundSpecialResult == 8 && playerBackground == "Folk Hero") {playerBackgroundSpecial += "A lord rescinded an unpopular decree after you led a symbolic act of protect against it.";}
+		if (playerBackgroundSpecialResult == 9 && playerBackground == "Folk Hero") {playerBackgroundSpecial += "A celestial, fey, or similar creature gave you a blessing or revealed your secret origin.";}
+		if (playerBackgroundSpecialResult == 10 && playerBackground == "Folk Hero") {playerBackgroundSpecial += "Recruited into a lord's army, you rose to leadership and were commended for your heroism.";}
+
+		if (playerPersonalityResult == 1 && playerBackground == "Folk Hero") {playerPersonality = "You judge people by their actions, not their words.";}
+		if (playerPersonalityResult == 2 && playerBackground == "Folk Hero") {playerPersonality = "If someone is in trouble, you're always ready to lend help.";}
+		if (playerPersonalityResult == 3 && playerBackground == "Folk Hero") {playerPersonality = "When you set your mind to something, you follow through no matter what gets in your way.";}
+		if (playerPersonalityResult == 4 && playerBackground == "Folk Hero") {playerPersonality = "You have a strong sense of fair play and always try to find the most equitable solution to arguments.";}
+		if (playerPersonalityResult == 5 && playerBackground == "Folk Hero") {playerPersonality = "You're confident in your own abilities and do what you can to instill confidence in others.";}
+		if (playerPersonalityResult == 6 && playerBackground == "Folk Hero") {playerPersonality = "Thinking is for other people. You prefer action.";}
+		if (playerPersonalityResult == 7 && playerBackground == "Folk Hero") {playerPersonality = "You misuse long words in an attempt to sound smarter.";}
+		if (playerPersonalityResult == 8 && playerBackground == "Folk Hero") {playerPersonality = "You get bored easily. When are you going to get on with your destiny?";}
+
+		if (playerIdealResult == 1 && playerBackground == "Folk Hero") {playerIdeal = "Respect. People deserve to be treated with dignity and respect. (Good)";}
+		if (playerIdealResult == 2 && playerBackground == "Folk Hero") {playerIdeal = "Fairness. No one should get preferential treatment before the law, and no one is above the law. (Lawful)";}
+		if (playerIdealResult == 3 && playerBackground == "Folk Hero") {playerIdeal = "Freedom. Tyrants must not be allowed to oppress the people. (Chaotic)";}
+		if (playerIdealResult == 4 && playerBackground == "Folk Hero") {playerIdeal = "Might. If you become strong, you can take what you want--what you deserve. (Evil)";}
+		if (playerIdealResult == 5 && playerBackground == "Folk Hero") {playerIdeal = "Sincerity. There's no good in pretending to be something you're not. (Neutral)";}
+		if (playerIdealResult == 6 && playerBackground == "Folk Hero") {playerIdeal = "Destiny. Nothing and no one can steer you away from your higher calling. (Any)";}
+
+		if (playerBondResult == 1 && playerBackground == "Folk Hero") {playerBond = "You have a family, but you have no idea where they are. One day, you hope to see them again.";}
+		if (playerBondResult == 2 && playerBackground == "Folk Hero") {playerBond = "You worked the land, you love the land, and you will protect the land.";}
+		if (playerBondResult == 3 && playerBackground == "Folk Hero") {playerBond = "A proud noble once gave you a horrible beating, and you will take your revenge on any bully you encounter.";}
+		if (playerBondResult == 4 && playerBackground == "Folk Hero") {playerBond = "Your tools are symbols of your past life, and you carry them so that you will never forget your roots.";}
+		if (playerBondResult == 5 && playerBackground == "Folk Hero") {playerBond = "You protect those who cannot protect themselves.";}
+		if (playerBondResult == 6 && playerBackground == "Folk Hero") {playerBond = "You wish your childhood sweetheart had come with you to pursue your destiny.";}
+
+		if (playerFlawResult == 1 && playerBackground == "Folk Hero") {playerFlaw = "The tyrant who rules your land will stop at nothing to see you killed.";}
+		if (playerFlawResult == 2 && playerBackground == "Folk Hero") {playerFlaw = "You're convinced of the significance of your destiny, and blind to your shortcomings and the risk of failure.";}
+		if (playerFlawResult == 3 && playerBackground == "Folk Hero") {playerFlaw = "The people who knew you when you were young know your shameful secret, so you can never go home again.";}
+		if (playerFlawResult == 4 && playerBackground == "Folk Hero") {playerFlaw = "You have a weakness for the vices of the city, especially hard drink.";}
+		if (playerFlawResult == 5 && playerBackground == "Folk Hero") {playerFlaw = "Secretly, you believe that things would be better if you were a tyrant lording over the land.";}
+		if (playerFlawResult == 6 && playerBackground == "Folk Hero") {playerFlaw = "You have trouble trusting in your allies.";}
 
 		if (backgroundResult == 6 && flip == 1) {playerBackground = "Guild Artisan";}
 		if (backgroundResult == 6 && flip == 2) {playerBackground = "Guild Merchant";}
@@ -1111,7 +1220,7 @@ public class CharGen : MonoBehaviour {
 	string RollSiblings() {
 		//Roll # of siblings (-2 if elf or dwarf)
 		int numberOfSiblingsResult = roll (1, 10);
-		if (playerRace == "Hill Dwarf" || playerRace == "Mountain Dwarf" || playerRace == "High Elf" || playerRace == "Wood Elf" || playerRace == "Dark Elf") {numberOfSiblingsResult -= 2;}
+		if (playerRace == "Hill Dwarf" || playerRace == "Mountain Dwarf" || playerRace == "Gray Dwarf" || playerRace == "High Elf" || playerRace == "Wood Elf" || playerRace == "Dark Elf" || playerRace == "Eladrin") {numberOfSiblingsResult -= 2;}
 		if (numberOfSiblingsResult <= 2) {playerNumberOfSiblings = 0;}
 		if (numberOfSiblingsResult >= 3 && numberOfSiblingsResult <= 4) {playerNumberOfSiblings = roll(1,3);}
 		if (numberOfSiblingsResult >= 5 && numberOfSiblingsResult <= 6) {playerNumberOfSiblings = roll(1,4) + 1;}
@@ -1209,7 +1318,7 @@ public class CharGen : MonoBehaviour {
 		}
 
 		if (parentsKnown == true) {
-			if (playerRace == "Half-elf") {
+			if (playerRace == "Half-elf" || playerRace == "Half-Wood Elf" || playerRace == "Half-Sun/Moon Elf" || playerRace == "Half-Dark Elf" || playerRace == "Half-Aquatic Elf") {
 				int mixedAncestryResultsHalfElf = roll (1, 8);
 				if (mixedAncestryResultsHalfElf <= 5) {
 					mixedAncestry = "One parent was an elf and the other was a human. ";
@@ -1534,7 +1643,7 @@ public class CharGen : MonoBehaviour {
 			if (classPersonalDecisionResult == 2) {playerClassPersonalDecision = "you were examining a strange tome you found in an abandoned library when the entity that would become your patron suddenly appeared before you.";}
 			if (classPersonalDecisionResult == 3) {playerClassPersonalDecision = "you stumbled into the clutches of your patron after you accidentally stepped through a magical doorway.";}
 			if (classPersonalDecisionResult == 4) {playerClassPersonalDecision = "when you were faced with a terrible crisis, you prayed to any being who would listen, and the creature that answered became your patron.";}
-			if (classPersonalDecisionResult == 5) {playerClassPersonalDecision = "your future patron visited you in your dreams and offered great power in exchange for your service.\t";}
+			if (classPersonalDecisionResult == 5) {playerClassPersonalDecision = "your future patron visited you in your dreams and offered great power in exchange for your service.";}
 			if (classPersonalDecisionResult == 6) {playerClassPersonalDecision = "one of your ancestors had a pact with your patron, so that entity was determined to bind you to the same agreement.";}
 		}
 
@@ -1564,11 +1673,11 @@ public class CharGen : MonoBehaviour {
 	void RollAgeAndNumberOfLifeEvents ()
 	{
 		int ageResult = roll (1, 100);
-		if (ageResult >1 && ageResult <=20) {playerAge = Random.Range(18,21); playerLifeEventCount = 1;}
-		if (ageResult >21 && ageResult <=59) {playerAge = Random.Range(21,31); playerLifeEventCount = roll(1,4);}
-		if (ageResult >60 && ageResult <=69) {playerAge = Random.Range(31,41); playerLifeEventCount = roll(1,6);}
-		if (ageResult >70 && ageResult <=89) {playerAge = Random.Range(41,51); playerLifeEventCount = roll(1,8);}
-		if (ageResult >90 && ageResult <=99) {playerAge = Random.Range(51,61); playerLifeEventCount = roll(1,10);}
+		if (ageResult >= 1 && ageResult <= 20) {playerAge = Random.Range(18,21); playerLifeEventCount = 1;}
+		if (ageResult >= 21 && ageResult <= 59) {playerAge = Random.Range(21,31); playerLifeEventCount = roll(1,4);}
+		if (ageResult >= 60 && ageResult <= 69) {playerAge = Random.Range(31,41); playerLifeEventCount = roll(1,6);}
+		if (ageResult >= 70 && ageResult <= 89) {playerAge = Random.Range(41,51); playerLifeEventCount = roll(1,8);}
+		if (ageResult >= 90 && ageResult <= 99) {playerAge = Random.Range(51,61); playerLifeEventCount = roll(1,10);}
 		if (ageResult == 100) {playerAge = Random.Range(61,106); playerLifeEventCount = roll(1,12);}
 		return;
 	}
