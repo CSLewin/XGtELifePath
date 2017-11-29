@@ -1131,27 +1131,148 @@ public class CharGen : MonoBehaviour {
 
 		if (backgroundResult == 6 && flip == 1) {playerBackground = "Guild Artisan";}
 		if (backgroundResult == 6 && flip == 2) {playerBackground = "Guild Merchant";}
-		if (playerBackground == "Guild Artisan" || playerBackground == "Guild Merchant") {playerBackgroundSpecial = "Guild Business: " + roll(1,20);}
+		if (playerBackground == "Guild Artisan" || playerBackground == "Guild Merchant") {playerBackgroundSpecialResult = roll(1,20); playerBackgroundSpecial = "Guild Business: ";}
+
+		if (playerBackgroundSpecialResult == 1 && playerBackground == "Guild Artisan" || playerPersonalityResult == 1 && playerBackground == "Guild Merchant") {playerBackgroundSpecial += "Alchemists and apothecaries";}
+		if (playerBackgroundSpecialResult == 2 && playerBackground == "Guild Artisan" || playerPersonalityResult == 2 && playerBackground == "Guild Merchant") {playerBackgroundSpecial += "Armorers, locksmiths, and finesmiths";}
+		if (playerBackgroundSpecialResult == 3 && playerBackground == "Guild Artisan" || playerPersonalityResult == 3 && playerBackground == "Guild Merchant") {playerBackgroundSpecial += "Brewers, distillers, and vintners";}
+		if (playerBackgroundSpecialResult == 4 && playerBackground == "Guild Artisan" || playerPersonalityResult == 4 && playerBackground == "Guild Merchant") {playerBackgroundSpecial += "Calligraphers, scribes, and scriveners";}
+		if (playerBackgroundSpecialResult == 5 && playerBackground == "Guild Artisan" || playerPersonalityResult == 5 && playerBackground == "Guild Merchant") {playerBackgroundSpecial += "Carpenters, roofers, and plasterers";}
+		if (playerBackgroundSpecialResult == 6 && playerBackground == "Guild Artisan" || playerPersonalityResult == 6 && playerBackground == "Guild Merchant") {playerBackgroundSpecial += "Cartographers, surveyors, and chart-makers";}
+		if (playerBackgroundSpecialResult == 7 && playerBackground == "Guild Artisan" || playerPersonalityResult == 7 && playerBackground == "Guild Merchant") {playerBackgroundSpecial += "Cobblers and shoemakers";}
+		if (playerBackgroundSpecialResult == 8 && playerBackground == "Guild Artisan" || playerPersonalityResult == 8 && playerBackground == "Guild Merchant") {playerBackgroundSpecial += "Cooks and bakers";}
+		if (playerBackgroundSpecialResult == 9 && playerBackground == "Guild Artisan" || playerPersonalityResult == 9 && playerBackground == "Guild Merchant") {playerBackgroundSpecial += "Glassblowers and glaziers";}
+		if (playerBackgroundSpecialResult == 10 && playerBackground == "Guild Artisan" || playerPersonalityResult == 10 && playerBackground == "Guild Merchant") {playerBackgroundSpecial += "Jewelers and gemcutters";}
+		if (playerBackgroundSpecialResult == 11 && playerBackground == "Guild Artisan" || playerPersonalityResult == 11 && playerBackground == "Guild Merchant") {playerBackgroundSpecial += "Leatherworkers, skinners, and tanners";}
+		if (playerBackgroundSpecialResult == 12 && playerBackground == "Guild Artisan" || playerPersonalityResult == 12 && playerBackground == "Guild Merchant") {playerBackgroundSpecial += "Masons and stonecutters";}
+		if (playerBackgroundSpecialResult == 13 && playerBackground == "Guild Artisan" || playerPersonalityResult == 13 && playerBackground == "Guild Merchant") {playerBackgroundSpecial += "Painters, limners, and sign-makers";}
+		if (playerBackgroundSpecialResult == 14 && playerBackground == "Guild Artisan" || playerPersonalityResult == 14 && playerBackground == "Guild Merchant") {playerBackgroundSpecial += "Potters and tile-makers";}
+		if (playerBackgroundSpecialResult == 15 && playerBackground == "Guild Artisan" || playerPersonalityResult == 15 && playerBackground == "Guild Merchant") {playerBackgroundSpecial += "Shipwrights and sailmakers";}
+		if (playerBackgroundSpecialResult == 16 && playerBackground == "Guild Artisan" || playerPersonalityResult == 16 && playerBackground == "Guild Merchant") {playerBackgroundSpecial += "Smiths and metal-forgers";}
+		if (playerBackgroundSpecialResult == 17 && playerBackground == "Guild Artisan" || playerPersonalityResult == 17 && playerBackground == "Guild Merchant") {playerBackgroundSpecial += "Tinkers, pewterers, and casters";}
+		if (playerBackgroundSpecialResult == 18 && playerBackground == "Guild Artisan" || playerPersonalityResult == 18 && playerBackground == "Guild Merchant") {playerBackgroundSpecial += "Wagon-makers and wheelwrights";}
+		if (playerBackgroundSpecialResult == 19 && playerBackground == "Guild Artisan" || playerPersonalityResult == 19 && playerBackground == "Guild Merchant") {playerBackgroundSpecial += "Weavers and dyers";}
+		if (playerBackgroundSpecialResult == 20 && playerBackground == "Guild Artisan" || playerPersonalityResult == 20 && playerBackground == "Guild Merchant") {playerBackgroundSpecial += "Woodcarvers, coopers, and bowyers";}
+
+		if (playerPersonalityResult == 1 && playerBackground == "Guild Artisan" || playerPersonalityResult == 1 && playerBackground == "Guild Merchant") {playerPersonality = "You believe that anything worth doing is worth doing right. You can't help it--you're a perfectionist.";}
+		if (playerPersonalityResult == 2 && playerBackground == "Guild Artisan" || playerPersonalityResult == 2 && playerBackground == "Guild Merchant") {playerPersonality = "You're a snob who looks down on those who can't appreciate fine art.";}
+		if (playerPersonalityResult == 3 && playerBackground == "Guild Artisan" || playerPersonalityResult == 3 && playerBackground == "Guild Merchant") {playerPersonality = "You always want to know how things work and what makes people tick.";}
+		if (playerPersonalityResult == 4 && playerBackground == "Guild Artisan" || playerPersonalityResult == 4 && playerBackground == "Guild Merchant") {playerPersonality = "You're full of witty aphorisms and have a proverb for every occasion.";}
+		if (playerPersonalityResult == 5 && playerBackground == "Guild Artisan" || playerPersonalityResult == 5 && playerBackground == "Guild Merchant") {playerPersonality = "You're rude to people who lack your commitment to hard work and fair play.";}
+		if (playerPersonalityResult == 6 && playerBackground == "Guild Artisan" || playerPersonalityResult == 6 && playerBackground == "Guild Merchant") {playerPersonality = "You like to talk at length about your profession.";}
+		if (playerPersonalityResult == 7 && playerBackground == "Guild Artisan" || playerPersonalityResult == 7 && playerBackground == "Guild Merchant") {playerPersonality = "You don't part with your money easily and will haggle tirelessly to get the best deal possible.";}
+		if (playerPersonalityResult == 8 && playerBackground == "Guild Artisan" || playerPersonalityResult == 8 && playerBackground == "Guild Merchant") {playerPersonality = "You're well known for your work, and you want to make sure everyone appreciates it. You're always taken aback when people haven't heard of you.";}
+
+		if (playerIdealResult == 1 && playerBackground == "Guild Artisan" || playerIdealResult == 1 && playerBackground == "Guild Merchant") {playerIdeal = "Community. It is the duty of all civilized people to strengthen the bonds of community and the security of civilization. (Lawful)";}
+		if (playerIdealResult == 2 && playerBackground == "Guild Artisan" || playerIdealResult == 2 && playerBackground == "Guild Merchant") {playerIdeal = "Generosity. Your talents were given to you so that you could use them to benefit the world. (Good)";}
+		if (playerIdealResult == 3 && playerBackground == "Guild Artisan" || playerIdealResult == 3 && playerBackground == "Guild Merchant") {playerIdeal = "Freedom. Everyone should be free to pursue his or her own livelihood. (Chaotic)";}
+		if (playerIdealResult == 4 && playerBackground == "Guild Artisan" || playerIdealResult == 4 && playerBackground == "Guild Merchant") {playerIdeal = "Greed. You're only in it for the money. (Evil)";}
+		if (playerIdealResult == 5 && playerBackground == "Guild Artisan" || playerIdealResult == 5 && playerBackground == "Guild Merchant") {playerIdeal = "People. You're committed to the people you care about, not to ideals. (Neutral)";}
+		if (playerIdealResult == 6 && playerBackground == "Guild Artisan" || playerIdealResult == 6 && playerBackground == "Guild Merchant") {playerIdeal = "Aspiration. You work hard to be the best there is at your craft.";}
+
+		if (playerBondResult == 1 && playerBackground == "Guild Artisan" || playerBondResult == 1 && playerBackground == "Guild Merchant") {playerBond = "The workshop where you learned your trade is the most important place in the world to you.";}
+		if (playerBondResult == 2 && playerBackground == "Guild Artisan" || playerBondResult == 2 && playerBackground == "Guild Merchant") {playerBond = "You created a great work for someone, and then found them unworthy to receive it. You're still looking for someone worthy.";}
+		if (playerBondResult == 3 && playerBackground == "Guild Artisan" || playerBondResult == 3 && playerBackground == "Guild Merchant") {playerBond = "You owe your guild a great debt for forging you into the person you am today.";}
+		if (playerBondResult == 4 && playerBackground == "Guild Artisan" || playerBondResult == 4 && playerBackground == "Guild Merchant") {playerBond = "You pursue wealth to secure someone's love.";}
+		if (playerBondResult == 5 && playerBackground == "Guild Artisan" || playerBondResult == 5 && playerBackground == "Guild Merchant") {playerBond = "One day you will return to your guild and prove that you are the greatest artisan of them all.";}
+		if (playerBondResult == 6 && playerBackground == "Guild Artisan" || playerBondResult == 6 && playerBackground == "Guild Merchant") {playerBond = "You will get revenge on the evil forces that destroyed your place of business and ruined your livelihood.";}
+
+		if (playerFlawResult == 1 && playerBackground == "Guild Artisan" || playerFlawResult == 1 && playerBackground == "Guild Merchant") {playerFlaw = "You'll do anything to get your hands on something rare or priceless.";}
+		if (playerFlawResult == 2 && playerBackground == "Guild Artisan" || playerFlawResult == 2 && playerBackground == "Guild Merchant") {playerFlaw = "You're quick to assume that someone is trying to cheat you.";}
+		if (playerFlawResult == 3 && playerBackground == "Guild Artisan" || playerFlawResult == 3 && playerBackground == "Guild Merchant") {playerFlaw = "No one must ever learn that you once stole money from guild coffers.";}
+		if (playerFlawResult == 4 && playerBackground == "Guild Artisan" || playerFlawResult == 4 && playerBackground == "Guild Merchant") {playerFlaw = "You're never satisfied with what you have--you always want more.";}
+		if (playerFlawResult == 5 && playerBackground == "Guild Artisan" || playerFlawResult == 5 && playerBackground == "Guild Merchant") {playerFlaw = "You would kill to acquire a noble title.";}
+		if (playerFlawResult == 6 && playerBackground == "Guild Artisan" || playerFlawResult == 6 && playerBackground == "Guild Merchant") {playerFlaw = "You're horribly jealous of anyone who can outshine your handiwork. Everywhere you go, you're surrounded by rivals.";}
 
 		if (backgroundResult == 7) {playerBackground = "Hermit";}
-		if (playerBackground == "Hermit") {playerBackgroundSpecial = "Life of Seclusion: " + roll(1,8);}
+		if (playerBackground == "Hermit") {playerBackgroundSpecialResult = roll(1,8); playerBackgroundSpecial = "Life of Seclusion: ";}
+
+		if (playerBackgroundSpecialResult == 1 && playerBackground == "Hermit") {playerBackgroundSpecial += "You were searching for spiritual enlightenment.";}
+		if (playerBackgroundSpecialResult == 2 && playerBackground == "Hermit") {playerBackgroundSpecial += "You were partaking of communal living in accordance with the dictates of a religious order.";}
+		if (playerBackgroundSpecialResult == 3 && playerBackground == "Hermit") {playerBackgroundSpecial += "You were exiled for a crime you didn't commit.";}
+		if (playerBackgroundSpecialResult == 4 && playerBackground == "Hermit") {playerBackgroundSpecial += "You retreated from society after a life-altering event.";}
+		if (playerBackgroundSpecialResult == 5 && playerBackground == "Hermit") {playerBackgroundSpecial += "You needed a quiet place to work on your art, literature, music, or manifesto.";}
+		if (playerBackgroundSpecialResult == 6 && playerBackground == "Hermit") {playerBackgroundSpecial += "You needed to commune with nature, far from civilization.";}
+		if (playerBackgroundSpecialResult == 7 && playerBackground == "Hermit") {playerBackgroundSpecial += "You were the caretaker of an ancient ruin or relic.";}
+		if (playerBackgroundSpecialResult == 8 && playerBackground == "Hermit") {playerBackgroundSpecial += "You were a pilgrim in search of a person, place, or relic of spiritual significance.";}
+
+		if (playerPersonalityResult == 1 && playerBackground == "Hermit") {playerPersonality = "You've been isolated for so long that you rarely speak, preferring gestures and the occasional grunt.";}
+		if (playerPersonalityResult == 2 && playerBackground == "Hermit") {playerPersonality = "You are utterly serene, even in the face of disaster.";}
+		if (playerPersonalityResult == 3 && playerBackground == "Hermit") {playerPersonality = "The leader of your community had something wise to say on every topic, and you are eager to share that wisdom.";}
+		if (playerPersonalityResult == 4 && playerBackground == "Hermit") {playerPersonality = "You feel tremendous empathy for all who suffer.";}
+		if (playerPersonalityResult == 5 && playerBackground == "Hermit") {playerPersonality = "You're oblivious to etiquette and social expectations. ";}
+		if (playerPersonalityResult == 6 && playerBackground == "Hermit") {playerPersonality = "You connect everything that happens to you to a grand, cosmic plan.";}
+		if (playerPersonalityResult == 7 && playerBackground == "Hermit") {playerPersonality = "You often get lost in your own thoughts and contemplation, beeoming oblivious to your surroundings.";}
+		if (playerPersonalityResult == 8 && playerBackground == "Hermit") {playerPersonality = "You are working on a grand philosophical theory and love sharing your ideas.";}
+
+		if (playerIdealResult == 1 && playerBackground == "Hermit") {playerIdeal = "Greater Good. Your gifts are meant to be shared with all, not used for your own benefit. (Good)";}
+		if (playerIdealResult == 2 && playerBackground == "Hermit") {playerIdeal = "Logic. Emotions must not cloud your sense of what is right and true, or your logical thinking. (Lawful)";}
+		if (playerIdealResult == 3 && playerBackground == "Hermit") {playerIdeal = "Free Thinking. Inquiry and curiosity are the pillars of progress. (Chaotic)";}
+		if (playerIdealResult == 4 && playerBackground == "Hermit") {playerIdeal = "Power. Solitude and contemplation are paths toward mystical or magical power. (Evil)";}
+		if (playerIdealResult == 5 && playerBackground == "Hermit") {playerIdeal = "Live and Let Live. Meddling in the affairs of others only causes trouble. (Neutral)";}
+		if (playerIdealResult == 6 && playerBackground == "Hermit") {playerIdeal = "Self Knowledge. If you know yourself, there's nothing left to know. (Any)";}
+
+		if (playerBondResult == 1 && playerBackground == "Hermit") {playerBond = "Nothing is more important than the other members of your hermitage, order, or association.";}
+		if (playerBondResult == 2 && playerBackground == "Hermit") {playerBond = "You entered seclusion to hide from the ones who might still be hunting you. You must someday confront them.";}
+		if (playerBondResult == 3 && playerBackground == "Hermit") {playerBond = "You're still seeking the enlightenment you pursued in your seclusion, and it still eludes you.";}
+		if (playerBondResult == 4 && playerBackground == "Hermit") {playerBond = "You entered seclusion because you loved someone you could not have.";}
+		if (playerBondResult == 5 && playerBackground == "Hermit") {playerBond = "Should your discovery come to light, it could bring ruin to the world.";}
+		if (playerBondResult == 6 && playerBackground == "Hermit") {playerBond = "Your isolation gave you great insight into a great evil that only you can destroy.";}
+
+		if (playerFlawResult == 1 && playerBackground == "Hermit") {playerFlaw = "Now that you've returned to the world, you enjoy its delights a little too much.";}
+		if (playerFlawResult == 2 && playerBackground == "Hermit") {playerFlaw = "You harbor dark, bloodthirsty thoughts that your isolation and meditation failed to quell.";}
+		if (playerFlawResult == 3 && playerBackground == "Hermit") {playerFlaw = "You are dogmatic in your thoughts and philosophy.";}
+		if (playerFlawResult == 4 && playerBackground == "Hermit") {playerFlaw = "You let your need to win arguments overshadow friendships and harmony.";}
+		if (playerFlawResult == 5 && playerBackground == "Hermit") {playerFlaw = "You'd risk too much to uncover a lost bit of knowledge.";}
+		if (playerFlawResult == 6 && playerBackground == "Hermit") {playerFlaw = "You like keeping secrets and won't share them with anyone.";}
+
 
 		if (backgroundResult == 8 && flip == 1) {playerBackground = "Noble";}
 		if (backgroundResult == 8 && flip == 2) {playerBackground = "Knight";}
 		if (playerBackground == "Noble" || playerBackground == "Knight") {playerBackgroundSpecial = null;}
 
+		if (playerPersonalityResult == 1 && playerBackground == "Noble" || playerPersonalityResult == 1 && playerBackground == "Knight") {playerPersonality = "Your eloquent flattery makes everyone you talk to feel like the most wonderful and important person in the world.";}
+		if (playerPersonalityResult == 2 && playerBackground == "Noble" || playerPersonalityResult == 2 && playerBackground == "Knight") {playerPersonality = "The common folk love you for your kindness and generosity.";}
+		if (playerPersonalityResult == 3 && playerBackground == "Noble" || playerPersonalityResult == 3 && playerBackground == "Knight") {playerPersonality = "No one could doubt by looking at your regal bearing that you are a cut above the unwashed masses.";}
+		if (playerPersonalityResult == 4 && playerBackground == "Noble" || playerPersonalityResult == 4 && playerBackground == "Knight") {playerPersonality = "You take great pains to always look your best and follow the latest fashions.";}
+		if (playerPersonalityResult == 5 && playerBackground == "Noble" || playerPersonalityResult == 5 && playerBackground == "Knight") {playerPersonality = "You don't like to get your hands dirty, and you won't be caught dead in unsuitable accommodations.";}
+		if (playerPersonalityResult == 6 && playerBackground == "Noble" || playerPersonalityResult == 6 && playerBackground == "Knight") {playerPersonality = "Despite your noble birth, you do not place yourself above other folk. You all have the same blood.";}
+		if (playerPersonalityResult == 7 && playerBackground == "Noble" || playerPersonalityResult == 7 && playerBackground == "Knight") {playerPersonality = "Your favor, once lost, is lost forever. ";}
+		if (playerPersonalityResult == 8 && playerBackground == "Noble" || playerPersonalityResult == 8 && playerBackground == "Knight") {playerPersonality = "If anyone does you an injury, you will crush them, ruin their name, and salt their fields.";}
+
+		if (playerIdealResult == 1 && playerBackground == "Noble" || playerIdealResult == 1 && playerBackground == "Knight") {playerIdeal = "Respect. Respect is due to you beeause of your position, but all people regardless of station deserve to be treated with dignity. (Good)";}
+		if (playerIdealResult == 2 && playerBackground == "Noble" || playerIdealResult == 2 && playerBackground == "Knight") {playerIdeal = "Responsibility. It is your duty to respect the authority of those above you, just as those below you must respect yours. (Lawful)";}
+		if (playerIdealResult == 3 && playerBackground == "Noble" || playerIdealResult == 3 && playerBackground == "Knight") {playerIdeal = "Independence. You must prove that you can handle yourself without the coddling of your family. (Chaotic)";}
+		if (playerIdealResult == 4 && playerBackground == "Noble" || playerIdealResult == 4 && playerBackground == "Knight") {playerIdeal = "Power. If you can attain more power, no one will tell you what to do. (Evil)";}
+		if (playerIdealResult == 5 && playerBackground == "Noble" || playerIdealResult == 5 && playerBackground == "Knight") {playerIdeal = "Family. Blood runs thicker than water. (Any)";}
+		if (playerIdealResult == 6 && playerBackground == "Noble" || playerIdealResult == 6 && playerBackground == "Knight") {playerIdeal = "Noble Obligation. It is your duty to protect and care for the people beneath you. (Good)";}
+
+		if (playerBondResult == 1 && playerBackground == "Noble" || playerBondResult == 1 && playerBackground == "Knight") {playerBond = "You will face any challenge to win the approval of your family.";}
+		if (playerBondResult == 2 && playerBackground == "Noble" || playerBondResult == 2 && playerBackground == "Knight") {playerBond = "Your house's alliance with another noble family must be sustained at all costs.";}
+		if (playerBondResult == 3 && playerBackground == "Noble" || playerBondResult == 3 && playerBackground == "Knight") {playerBond = "Nothing is more important than the other members of your family.";}
+		if (playerBondResult == 4 && playerBackground == "Noble" || playerBondResult == 4 && playerBackground == "Knight") {playerBond = "You are in love with the heir of a family that your family despises.";}
+		if (playerBondResult == 5 && playerBackground == "Noble" || playerBondResult == 5 && playerBackground == "Knight") {playerBond = "Your loyalty to your sovereign is unwavering.";}
+		if (playerBondResult == 6 && playerBackground == "Noble" || playerBondResult == 6 && playerBackground == "Knight") {playerBond = "The common folk must see you as a hero of the people.";}
+
+		if (playerFlawResult == 1 && playerBackground == "Noble" || playerFlawResult == 1 && playerBackground == "Knight") {playerFlaw = "You secretly believe that everyone is beneath you.";}
+		if (playerFlawResult == 2 && playerBackground == "Noble" || playerFlawResult == 2 && playerBackground == "Knight") {playerFlaw = "You hide a truly scandalous secret that could ruin your family forever.";}
+		if (playerFlawResult == 3 && playerBackground == "Noble" || playerFlawResult == 3 && playerBackground == "Knight") {playerFlaw = "You too often hear veiled insults and threats in every word addressed to you, and you're quick to anger.";}
+		if (playerFlawResult == 4 && playerBackground == "Noble" || playerFlawResult == 4 && playerBackground == "Knight") {playerFlaw = "You have an insatiable desire for carnal pleasures.";}
+		if (playerFlawResult == 5 && playerBackground == "Noble" || playerFlawResult == 5 && playerBackground == "Knight") {playerFlaw = "In fact, the world does revolve around you.";}
+		if (playerFlawResult == 6 && playerBackground == "Noble" || playerFlawResult == 6 && playerBackground == "Knight") {playerFlaw = "By your words and actions, you often bring shame to your family.";}
+
 		if (backgroundResult == 9) {playerBackground = "Outlander";}
-		if (playerBackground == "Outlander") {playerBackgroundSpecial = "Origin: " + roll(1,10);}
+		if (playerBackground == "Outlander") {playerBackgroundSpecialResult = roll(1,10); playerBackgroundSpecial = "Origin: ";}
 
 		if (backgroundResult == 10) {playerBackground = "Sage";}
-		if (playerBackground == "Sage") {playerBackgroundSpecial = "Specialty: " + roll(1,8);}
+		if (playerBackground == "Sage") {playerBackgroundSpecialResult = roll(1,8); playerBackgroundSpecial = "Specialty: ";}
 
 		if (backgroundResult == 11 && flip == 1) {playerBackground = "Sailor";}
 		if (backgroundResult == 11 && flip == 2) {playerBackground = "Pirate";}
 		if (playerBackground == "Sailor" || playerBackground == "Pirate") {playerBackgroundSpecial = null;}
 
 		if (backgroundResult == 12) {playerBackground = "Soldier";}
-		if (playerBackground == "Soldier") {playerBackgroundSpecial = "Specialty: " + roll(1,8);}
+		if (playerBackground == "Soldier") {playerBackgroundSpecialResult = roll(1,8); playerBackgroundSpecial = "Specialty: ";}
 
 		if (backgroundResult == 13) {playerBackground = "Urchin";}
 		if (playerBackground == "Urchin") {playerBackgroundSpecial = null;}
@@ -1912,8 +2033,8 @@ public class CharGen : MonoBehaviour {
 		if (tragediesResult == 10) {TragediesText = "For a reason you were never told, you were exiled from your community. You " + tragedyExile + ".";}
 
 		int tragedyEndOfRomanceResult = roll(1,2);
-			if (tragedyEndOfRomanceResult == 1) {tragedyEndOfRomance = " with bad feelings";}
-			if (tragedyEndOfRomanceResult == 2) {tragedyEndOfRomance = " amicably";}
+			if (tragedyEndOfRomanceResult == 1) {tragedyEndOfRomance = "with bad feelings";}
+			if (tragedyEndOfRomanceResult == 2) {tragedyEndOfRomance = "amicably";}
 
 		if (tragediesResult == 11) {TragediesText = "A romantic relationship ended " + tragedyEndOfRomance + ".";}
 		if (tragediesResult == 12) 
