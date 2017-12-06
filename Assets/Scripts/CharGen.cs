@@ -94,13 +94,22 @@ public class CharGen : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		displayText.text += "Press 'A' to generate a new character.\n\n";
+		displayText.text += "Press 'A' to generate a new character. Press 'C' to copy the screen to the system clipboard. Press 'Escape' to quit.\n\n";
 		displayText.text += "<i>(Created with deep inspiration from--and tremendous thanks to--WotC and the XGtE creators.)</i>";
 
 	}
 	
 	// Update is called once per frame
 	void Update () {
+
+		if (Input.GetKeyDown (KeyCode.Escape)) {
+			Application.Quit();
+		}
+
+		if (Input.GetKeyDown (KeyCode.C)) {
+			GUIUtility.systemCopyBuffer = displayText.text;
+		}
+
 		if (Input.GetKeyDown (KeyCode.A)) {
 			flip = roll(1,2);
 
@@ -117,7 +126,7 @@ public class CharGen : MonoBehaviour {
 
 			GenerateCharacter ();
 
-			displayText.text = "Press 'A' to generate a new character.\n\n";
+			displayText.text = "Press 'A' to generate a new character. Press 'C' to copy the screen to the system clipboard. Press 'Escape' to quit.\n\n";
 
 			displayText.text += "You are a " + playerGender + " " + playerRace + " " + playerClass + playerSubclass + "! You are " + playerAge + " years old.\n\n";
 
